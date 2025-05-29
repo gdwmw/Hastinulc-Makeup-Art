@@ -171,9 +171,9 @@ const Component: FC<IComponent> = (props): ReactElement => (
       className={`absolute inset-x-0 top-0 m-0 h-1.5 border-none ${
         {
           Canceled: "bg-red-400",
-          "Down Payment": "bg-orange-400",
+          "Down Pay": "bg-orange-400",
           Expired: "bg-red-400",
-          "Final Payment": "bg-orange-400",
+          "Final Pay": "bg-orange-400",
           "On Going": "bg-blue-400",
           Rejected: "bg-red-400",
           Success: "bg-green-400",
@@ -183,17 +183,17 @@ const Component: FC<IComponent> = (props): ReactElement => (
     />
 
     <div className="flex flex-col gap-4 p-5">
-      <header className="flex items-center justify-between">
+      <header className="flex items-center justify-between gap-2">
         <h1 className="line-clamp-1 text-lg font-semibold text-gray-900">{props.data.name || "-"}</h1>
 
         <div className="flex w-fit items-center gap-2">
           <strong
-            className={`flex h-6 w-full max-w-24 items-center justify-center rounded-full px-5 text-xs font-semibold text-white ${
+            className={`flex h-6 w-full min-w-fit max-w-24 items-center justify-center rounded-full px-5 text-xs font-semibold text-white ${
               {
                 Canceled: "bg-red-400",
-                "Down Payment": "bg-orange-400",
+                "Down Pay": "bg-orange-400",
                 Expired: "bg-red-400",
-                "Final Payment": "bg-orange-400",
+                "Final Pay": "bg-orange-400",
                 "On Going": "bg-blue-400",
                 Rejected: "bg-red-400",
                 Success: "bg-green-400",

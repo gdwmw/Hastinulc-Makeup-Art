@@ -85,9 +85,9 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
               className={`flex h-7 w-28 items-center justify-center rounded-full text-sm font-semibold text-white max-[380px]:text-xs ${
                 {
                   Canceled: "bg-red-400",
-                  "Down Payment": "bg-orange-400",
+                  "Down Pay": "bg-orange-400",
                   Expired: "bg-red-400",
-                  "Final Payment": "bg-orange-400",
+                  "Final Pay": "bg-orange-400",
                   "On Going": "bg-blue-400",
                   Rejected: "bg-red-400",
                   Success: "bg-green-400",
