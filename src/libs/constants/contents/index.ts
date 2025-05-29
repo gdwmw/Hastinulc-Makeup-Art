@@ -3,6 +3,7 @@ import testimonialsImage2 from "@/public/assets/images/model/Testimonials-3.jpg"
 import testimonialsImage3 from "@/public/assets/images/model/Testimonials-4.jpg";
 import testimonialsImage4 from "@/public/assets/images/model/Testimonials-5.jpg";
 import testimonialsImage5 from "@/public/assets/images/model/Testimonials-6.jpg";
+import { TTranslations } from "@/src/hooks";
 
 // ----------------------------
 
@@ -119,12 +120,12 @@ export const EXAMPLE_PACKAGES_DATA = [
 
 // ----------------------------
 
-export const NAVIGATION_DATA = [
-  { href: "#home", id: 1, label: "Home" },
-  { href: "#about", id: 2, label: "About" },
-  { href: "#portfolio", id: 3, label: "Portfolio" },
-  { href: "#packages", id: 4, label: "Packages" },
-  { href: "#contact", id: 5, label: "Contact" },
+export const NAVIGATION_DATA = (dt: TTranslations) => [
+  { href: "#home", id: 1, label: dt.navigation[0] },
+  { href: "#about", id: 2, label: dt.navigation[1] },
+  { href: "#portfolio", id: 3, label: dt.navigation[2] },
+  { href: "#packages", id: 4, label: dt.navigation[3] },
+  { href: "#contact", id: 5, label: dt.navigation[4] },
 ];
 
 // ----------------------------

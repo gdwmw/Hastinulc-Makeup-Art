@@ -2,6 +2,7 @@
 
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, FormEvent, ReactElement, useEffect, useState } from "react";
@@ -12,16 +13,19 @@ import { MdSpaceDashboard } from "react-icons/md";
 import logo from "@/public/assets/images/logos/Black.svg";
 import { Avatar, DetailedAvatar, ExampleA, ExampleATWM } from "@/src/components";
 import { useGlobalStates } from "@/src/context";
-import { questionnaireConditions as conditions } from "@/src/hooks";
+import { questionnaireConditions as conditions, useLanguage } from "@/src/hooks";
+import { en } from "@/src/i18n";
 import { NAVIGATION_DATA } from "@/src/libs";
 import { IDataResponse } from "@/src/types";
 
 interface I {
+  language: RequestCookie | undefined;
   response: IDataResponse | null | undefined;
   session: null | Session;
 }
 
 export const Content: FC<I> = (props): ReactElement => {
+  const language = useLanguage().get(props.language?.value ?? undefined);
   const { setOpen } = useGlobalStates();
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +43,7 @@ export const Content: FC<I> = (props): ReactElement => {
 
   useEffect(() => {
     const handleActiveSection = () => {
-      const sections = NAVIGATION_DATA.map((item) => document.querySelector(item.href));
+      const sections = NAVIGATION_DATA(en).map((item) => document.querySelector(item.href));
 
       sections.forEach((section) => {
         if (section) {
@@ -73,7 +77,7 @@ export const Content: FC<I> = (props): ReactElement => {
       <Image alt="Hastinulc Makeup Art" priority src={logo} width={200} />
 
       <ul className="hidden items-center gap-5 font-semibold min-[850px]:flex">
-        {NAVIGATION_DATA.map((dt) => (
+        {NAVIGATION_DATA(language).map((dt) => (
           <li key={dt.id}>
             <Link
               className={ExampleATWM({
@@ -128,7 +132,7 @@ export const Content: FC<I> = (props): ReactElement => {
                       href="/profile"
                     >
                       <FaUser size={16} />
-                      Profile
+                      {language.navigation[5]}
                     </Link>
                   </li>
 
@@ -139,7 +143,7 @@ export const Content: FC<I> = (props): ReactElement => {
                       onClick={() => setOpen({ historyAsideSwitch: false, historyDetailSwitch: false })}
                     >
                       <FaHistory size={16} />
-                      History
+                      {language.navigation[6]}
                     </Link>
                   </li>
 
@@ -159,7 +163,7 @@ export const Content: FC<I> = (props): ReactElement => {
                     >
                       <div className="flex items-center gap-2">
                         <FaClipboardList size={16} />
-                        <span>Questionnaire</span>
+                        <span>{language.navigation[7]}</span>
                       </div>
                       {questionnaireConditions && (
                         <div className="relative mt-[2px] flex size-2">

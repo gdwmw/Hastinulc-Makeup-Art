@@ -1,11 +1,12 @@
 import { FC, ReactElement } from "react";
 
-import { getAllSession } from "@/src/hooks";
+import { getAllSession, getCookie } from "@/src/hooks";
 import { GETDataByDocumentId } from "@/src/utils";
 
 import { Content } from "./batches";
 
 export const ASide: FC = async (): Promise<ReactElement> => {
+  const language = await getCookie("language");
   const session = await getAllSession();
 
   const fetchData = async () => {
@@ -19,5 +20,5 @@ export const ASide: FC = async (): Promise<ReactElement> => {
     }
   };
 
-  return <Content response={session?.user?.role !== "demo" ? await fetchData() : undefined} session={session} />;
+  return <Content language={language} response={session?.user?.role !== "demo" ? await fetchData() : undefined} session={session} />;
 };
