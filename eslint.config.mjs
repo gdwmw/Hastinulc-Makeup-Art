@@ -34,13 +34,13 @@ const eslintConfig = [
     ignores: ["!.storybook"],
   },
   {
-    files: ["**/.commitlintrc.cjs"],
+    files: ["**/.commitlintrc.cjs", "src/i18n/**"],
     rules: {
       "perfectionist/sort-objects": "off",
     },
   },
   {
-    files: ["src/types/**/*.ts"],
+    files: ["src/types/**"],
     rules: {
       "perfectionist/sort-enums": "off",
       "perfectionist/sort-interfaces": "off",
