@@ -1,66 +1,66 @@
 import { idButton, idInput } from "./components";
 
 export const id = {
-  navigation: ["Beranda", "Tentang", "Portofolio", "Paket", "Kontak", "Profil", "Riwayat", "Daftar Pertanyaan"],
+  navigation: ["Beranda", "Tentang", "Portofolio", "Paket", "Kontak", "Profil", "Riwayat", "Kuesioner"],
   // ----------------------------
   home: {
     hero: {
       subtitle: "MEMPERCANTIK",
-      title: "Penata Rias Profesional",
+      title: "Makeup Artist Profesional",
       description:
-        "Memberikan sentuhan kecantikan yang elegan dan profesional untuk momen spesial Anda. Percayakan penampilan terbaik Anda kepada kami.",
+        "Memberikan sentuhan kecantikan elegan dan profesional untuk momen spesial Anda. Percayakan pada kami untuk menampilkan penampilan terbaik Anda.",
     },
     input: idInput,
     button: idButton,
-    contact: "Butuh Bantuan? Hubungi kami",
+    contact: "Butuh bantuan? Hubungi kami",
   },
   // ----------------------------
   about: [
     {
       experience: "Tahun\nPengalaman",
       subtitle: "SELAMAT DATANG DI",
-      title: "Penata Rias Profesional Terbaik",
+      title: "Makeup Artist Profesional Terbaik",
       description:
-        "Di Hastinulc Makeup Art, kami percaya bahwa setiap wajah menceritakan sebuah kisah, dan kami hadir untuk membuatnya bersinar. Dengan pengalaman lebih dari 15 tahun, kami mengkhususkan diri dalam meningkatkan kecantikan alami dan menciptakan penampilan yang tak terlupakan untuk setiap momen spesial. Percayakan kepada kami untuk menonjolkan rasa percaya diri dan keanggunan Anda dengan layanan tata rias profesional kami.",
+        "Di Hastinulc Makeup Art, kami percaya bahwa setiap wajah memiliki cerita, dan kami di sini untuk membuatnya bersinar. Dengan pengalaman lebih dari 15 tahun, kami ahli dalam memperkuat kecantikan alami dan menciptakan tampilan tak terlupakan untuk setiap momen spesial. Percayakan kepada kami untuk membangkitkan kepercayaan diri dan keanggunan Anda dengan layanan makeup profesional kami.",
     },
     {
       subtitle: "SPESIAL",
-      title: "Kami Siap Membuat Hari Anda Berkesan",
+      title: "Kami Hadir untuk Membuat Hari Anda Berkesan",
       description:
-        "Setiap momen layak menjadi luar biasa, dan kami hadir untuk mewujudkannya. Dari pernikahan hingga acara khusus, sentuhan ahli kami memastikan Anda akan tampil dan merasa terbaik. Biarkan kami menciptakan kenangan yang bertahan seumur hidup dengan layanan kecantikan yang sempurna dan personal.",
+        "Setiap momen layak untuk menjadi luar biasa, dan kami hadir untuk mewujudkannya. Mulai dari pernikahan hingga acara spesial, sentuhan ahli kami akan memastikan Anda tampil dan merasa terbaik. Biarkan kami menciptakan kenangan indah dengan layanan kecantikan yang sempurna dan personal.",
     },
     {
       subtitle: "MENGAPA KAMI",
-      title: "Mengapa Memilih Kami?",
+      title: "Kenapa Memilih Kami?",
       description:
-        "Memilih penata rias yang tepat adalah kunci untuk membuat hari istimewa Anda tak terlupakan. Kami memadukan keterampilan, gairah, dan perhatian terhadap detail untuk memastikan kecantikan Anda bersinar di setiap momen. Inilah alasan kami menonjol.",
+        "Memilih makeup artist yang tepat adalah kunci untuk membuat hari spesial Anda tak terlupakan. Kami menggabungkan keterampilan, semangat, dan perhatian terhadap detail untuk memastikan kecantikan Anda bersinar di setiap momen. Inilah alasan kami berbeda.",
       list: [
-        "Kami datang ke tempat Anda, tidak peduli seberapa jauh",
-        "Kami menyediakan layanan penuh untuk Anda",
-        "Kami memilih riasan yang sempurna untuk Anda",
-        "Kami tetap tenang dan bersenang-senang di hari istimewa Anda",
+        "Kami datang ke lokasi Anda, sejauh apa pun",
+        "Kami menyediakan layanan lengkap untuk Anda",
+        "Kami bantu memilih riasan yang sempurna",
+        "Kami menjaga suasana tetap tenang & menyenangkan di hari spesial Anda",
         "Kami adalah tim yang sangat profesional",
-        "Garansi untuk anda yang tidak puas",
+        "Garansi untuk Anda yang tidak puas",
       ],
     },
   ],
   // ----------------------------
   portfolio: {
     subtitle: "PORTOFOLIO",
-    title: "Memamerkan Karya Agung Kami",
+    title: "Menampilkan Karya Terbaik Kami",
     description:
-      "Portofolio kami menonjolkan seni dan ketepatan yang menjadi ciri khas karya kami. Dari tampilan yang berani dan dramatis hingga keanggunan yang lembut dan alami, setiap gambar mencerminkan dedikasi kami terhadap kesempurnaan. Dengan keahlian lebih dari 15 tahun, kami telah mengubah wajah yang tak terhitung jumlahnya menjadi mahakarya abadi untuk setiap acara khusus. Jelajahi karya kami dan biarkan kami menginspirasi penampilan tak terlupakan Anda berikutnya.",
+      "Portofolio kami menunjukkan seni dan ketelitian yang menjadi ciri khas pekerjaan kami. Dari tampilan yang berani dan dramatis hingga keanggunan alami yang lembut, setiap gambar mencerminkan dedikasi kami terhadap kesempurnaan. Dengan pengalaman lebih dari 15 tahun, kami telah mengubah banyak wajah menjadi karya seni yang abadi untuk setiap kesempatan spesial. Jelajahi karya kami dan temukan inspirasi untuk tampilan tak terlupakan Anda selanjutnya.",
     button: idButton,
   },
   // ----------------------------
   packages: {
     subtitle: "PAKET",
-    title: "Pilih Paket Rias Anda",
-    description: "Dengan Hastinulc Makeup Art, Anda tidak hanya akan mendapatkan layanan Rias Impian tetapi juga dengan harga yang terjangkau.",
+    title: "Pilih Paket Makeup Anda",
+    description: "Dengan Hastinulc Makeup Art, Anda tidak hanya mendapatkan layanan rias impian, tapi juga harga yang terjangkau.",
     button: idButton,
     list: [
       [
-        { id: 1, text: "Riasan Tiga Kali" },
+        { id: 1, text: "Makeup Tiga Kali" },
         { id: 2, text: "Henna" },
         { id: 3, text: "Kuku Palsu" },
         { id: 4, text: "Softlens" },
@@ -68,7 +68,7 @@ export const id = {
         { id: 6, text: "Transportasi" },
       ],
       [
-        { id: 1, text: "Riasan Dua Kali" },
+        { id: 1, text: "Makeup Dua Kali" },
         { id: 2, text: "Henna" },
         { id: 3, text: "Kuku Palsu" },
         { id: 4, text: "Softlens" },
@@ -76,7 +76,7 @@ export const id = {
         { id: 6, text: "Transportasi" },
       ],
       [
-        { id: 1, text: "Riasan Sekali Saja" },
+        { id: 1, text: "Makeup Satu Kali" },
         { id: 2, text: "Henna" },
         { id: 3, text: "Kuku Palsu" },
         { id: 4, text: "Softlens" },
@@ -107,41 +107,41 @@ export const id = {
   // ----------------------------
   testimonials: {
     subtitle: "TESTIMONI",
-    title: "Kata-kata dari Klien",
+    title: "Kata Klien Kami",
     list: [
       {
-        role: "SUPER MODEL",
-        word: "Saya sangat terkesan dengan hasil riasannya! Perhatian terhadap detail dan profesionalisme melebihi semua harapan saya. Penampilannya sempurna dan bertahan sepanjang hari. Sangat direkomendasikan!",
+        role: "SUPERMODEL",
+        word: "Saya sangat terkesan dengan hasil makeup-nya! Perhatian terhadap detail dan profesionalismenya melebihi ekspektasi saya. Hasilnya sempurna dan tahan lama. Sangat direkomendasikan!",
       },
       {
         role: "AKTRIS",
-        word: "Riasan wajah dilakukan dengan sangat teliti dan menghasilkan tampilan yang sempurna untuk setiap adegan. Sangat memuaskan!",
+        word: "Makeup-nya dikerjakan dengan sangat detail dan memberikan tampilan sempurna untuk setiap adegan. Sangat memuaskan!",
       },
       {
         role: "MODEL",
-        word: "Pengalaman yang sangat menyenangkan! Hasil riasannya persis seperti yang saya inginkan. Sangat direkomendasikan!",
+        word: "Pengalaman yang menyenangkan! Makeup-nya sesuai dengan keinginan saya. Sangat direkomendasikan!",
       },
       {
-        role: "PENGANTIN PEREMPUAN",
-        word: "Layanan tata rias yang luar biasa! Hasilnya sangat alami dan tahan lama. Sangat profesional dan tepat waktu.",
+        role: "PENGANTIN",
+        word: "Layanan makeup yang luar biasa! Hasilnya sangat natural dan tahan lama. Sangat profesional dan tepat waktu.",
       },
       {
-        role: "PENGIRING PENGANTIN PEREMPUAN",
-        word: "Riasan yang cantik dan sangat sesuai dengan tema pernikahan. Saya merasa sangat percaya diri sepanjang hari.",
+        role: "PENDAMPING PENGANTIN",
+        word: "Makeup yang indah dan sesuai dengan tema pernikahan. Saya merasa sangat percaya diri sepanjang hari.",
       },
       {
         role: "FOTOGRAFER",
-        word: "Sebagai seorang fotografer, saya kagum dengan betapa sempurnanya riasan yang terlihat di kamera. Sangat merekomendasikan layanan ini!",
+        word: "Sebagai fotografer, saya sangat kagum dengan bagaimana makeup-nya terlihat sempurna di kamera. Sangat direkomendasikan!",
       },
     ],
   },
   // ----------------------------
   contact: {
-    subtitle: "KONTAK",
+    subtitle: "HUBUNGI KAMI",
     title: "Hubungi Kami",
     description:
-      "Jangan ragu untuk menghubungi kami untuk pertanyaan atau pemesanan. Kami hadir untuk memberikan layanan yang luar biasa dan memastikan momen spesial Anda tak terlupakan. Mari kita hubungi dan ciptakan sesuatu yang indah bersama.",
+      "Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin melakukan pemesanan. Kami di sini untuk memberikan pelayanan terbaik dan memastikan momen spesial Anda tak terlupakan. Mari kita wujudkan keindahan bersama.",
   },
   // ----------------------------
-  footer: ["Semua hak dilindungi undang-undang.", "Persyaratan Layanan", "Kebijakan Privasi", "Kelola Cookie"],
+  footer: ["Seluruh hak cipta dilindungi.", "Syarat Layanan", "Kebijakan Privasi", "Kelola Cookie"],
 };
