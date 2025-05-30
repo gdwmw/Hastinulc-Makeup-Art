@@ -1,1 +1,1 @@
-export const idInput = ["Name", "Email", "Phone", "Package", "Date", "Google Maps Link"];
+export const enInput = ["Name", "Email", "Phone", "Package", "Date", "Google Maps Link"];

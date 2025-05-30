@@ -18,6 +18,7 @@ export const useLanguage = () => {
   const set = (lang: TLanguage) => {
     if (lang in SUPPORTED_LANGUAGES) {
       setLanguage(lang);
+      localStorage.setItem("language", lang);
       setCookie({ name: "language", value: lang });
     }
   };

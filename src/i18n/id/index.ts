@@ -1,7 +1,7 @@
 import { idButton, idInput } from "./components";
 
 export const id = {
-  navigation: ["Rumah", "Tentang", "Portofolio", "Paket", "Kontak", "Profil", "Riwayat", "Daftar Pertanyaan"],
+  navigation: ["Beranda", "Tentang", "Portofolio", "Paket", "Kontak", "Profil", "Riwayat", "Daftar Pertanyaan"],
   // ----------------------------
   home: {
     hero: {
@@ -17,6 +17,7 @@ export const id = {
   // ----------------------------
   about: [
     {
+      experience: "Tahun\nPengalaman",
       subtitle: "SELAMAT DATANG DI",
       title: "Penata Rias Profesional Terbaik",
       description:
@@ -56,6 +57,7 @@ export const id = {
     subtitle: "PAKET",
     title: "Pilih Paket Rias Anda",
     description: "Dengan Hastinulc Makeup Art, Anda tidak hanya akan mendapatkan layanan Rias Impian tetapi juga dengan harga yang terjangkau.",
+    button: idButton,
     list: [
       [
         { id: 1, text: "Riasan Tiga Kali" },
@@ -109,29 +111,27 @@ export const id = {
     list: [
       {
         role: "SUPER MODEL",
-        words:
-          "Saya sangat terkesan dengan hasil riasannya! Perhatian terhadap detail dan profesionalisme melebihi semua harapan saya. Penampilannya sempurna dan bertahan sepanjang hari. Sangat direkomendasikan!",
+        word: "Saya sangat terkesan dengan hasil riasannya! Perhatian terhadap detail dan profesionalisme melebihi semua harapan saya. Penampilannya sempurna dan bertahan sepanjang hari. Sangat direkomendasikan!",
       },
       {
         role: "AKTRIS",
-        words: "Riasan wajah dilakukan dengan sangat teliti dan menghasilkan tampilan yang sempurna untuk setiap adegan. Sangat memuaskan!",
+        word: "Riasan wajah dilakukan dengan sangat teliti dan menghasilkan tampilan yang sempurna untuk setiap adegan. Sangat memuaskan!",
       },
       {
         role: "MODEL",
-        words: "Pengalaman yang sangat menyenangkan! Hasil riasannya persis seperti yang saya inginkan. Sangat direkomendasikan!",
+        word: "Pengalaman yang sangat menyenangkan! Hasil riasannya persis seperti yang saya inginkan. Sangat direkomendasikan!",
       },
       {
         role: "PENGANTIN PEREMPUAN",
-        words: "Layanan tata rias yang luar biasa! Hasilnya sangat alami dan tahan lama. Sangat profesional dan tepat waktu.",
+        word: "Layanan tata rias yang luar biasa! Hasilnya sangat alami dan tahan lama. Sangat profesional dan tepat waktu.",
       },
       {
         role: "PENGIRING PENGANTIN PEREMPUAN",
-        words: "Riasan yang cantik dan sangat sesuai dengan tema pernikahan. Saya merasa sangat percaya diri sepanjang hari.",
+        word: "Riasan yang cantik dan sangat sesuai dengan tema pernikahan. Saya merasa sangat percaya diri sepanjang hari.",
       },
       {
         role: "FOTOGRAFER",
-        words:
-          "Sebagai seorang fotografer, saya kagum dengan betapa sempurnanya riasan yang terlihat di kamera. Sangat merekomendasikan layanan ini!",
+        word: "Sebagai seorang fotografer, saya kagum dengan betapa sempurnanya riasan yang terlihat di kamera. Sangat merekomendasikan layanan ini!",
       },
     ],
   },

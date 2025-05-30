@@ -1,4 +1,4 @@
-import { idButton, idInput } from "./components";
+import { enButton, enInput } from "./components";
 
 export const en = {
   navigation: ["Home", "About", "Portfolio", "Packages", "Contact", "Profile", "History", "Questionnaire"],
@@ -9,13 +9,14 @@ export const en = {
       title: "Professional Makeup Artist",
       description: "Delivering elegant and professional beauty touches for your special moments. Trust us to bring out your best look.",
     },
-    input: idInput,
-    button: idButton,
+    input: enInput,
+    button: enButton,
     contact: "Need Help? Contact us",
   },
   // ----------------------------
   about: [
     {
+      experience: "Years of\nExperience",
       subtitle: "WELCOME TO",
       title: "Best Professional Makeup Artist",
       description:
@@ -48,13 +49,14 @@ export const en = {
     title: "Showcasing Our Masterpieces",
     description:
       "Our portfolio highlights the artistry and precision that define our work. From bold, dramatic looks to soft, natural elegance, each image reflects our dedication to perfection. With over 15 years of expertise, we have transformed countless faces into timeless masterpieces for every special occasion. Explore our work and let us inspire your next unforgettable look.",
-    button: idButton,
+    button: enButton,
   },
   // ----------------------------
   packages: {
     subtitle: "PACKAGES",
     title: "Choose Your Makeup Package",
     description: "With Hastinulc Makeup Art, You'll not get only your Dream Makeup services but also at affordable price.",
+    button: enButton,
     list: [
       [
         { id: 1, text: "Three-time Makeup" },
@@ -108,28 +110,27 @@ export const en = {
     list: [
       {
         role: "SUPER MODEL",
-        words:
-          "I am beyond impressed with the makeup artistry! The attention to detail and professionalism exceeded all my expectations. The look was flawless and lasted all day. Highly recommended!",
+        word: "I am beyond impressed with the makeup artistry! The attention to detail and professionalism exceeded all my expectations. The look was flawless and lasted all day. Highly recommended!",
       },
       {
         role: "ACTRESS",
-        words: "The makeup was done with great attention to detail and provided a flawless look for every scene. Very satisfying!",
+        word: "The makeup was done with great attention to detail and provided a flawless look for every scene. Very satisfying!",
       },
       {
         role: "MODEL",
-        words: "Such a pleasant experience! The makeup turned out exactly as I wanted. Highly recommended!",
+        word: "Such a pleasant experience! The makeup turned out exactly as I wanted. Highly recommended!",
       },
       {
         role: "BRIDE",
-        words: "Amazing makeup service! The results were very natural and long-lasting. Highly professional and punctual.",
+        word: "Amazing makeup service! The results were very natural and long-lasting. Highly professional and punctual.",
       },
       {
         role: "BRIDESMAID",
-        words: "Beautiful makeup that perfectly matched the wedding theme. I felt so confident all day long.",
+        word: "Beautiful makeup that perfectly matched the wedding theme. I felt so confident all day long.",
       },
       {
         role: "PHOTOGRAPHER",
-        words: "As a photographer, I was amazed by how flawless the makeup looked on camera. Highly recommend this service!",
+        word: "As a photographer, I was amazed by how flawless the makeup looked on camera. Highly recommend this service!",
       },
     ],
   },
