@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, ReactElement } from "react";
 
-import { getAllSession } from "@/src/hooks";
+import { getAllSession, getCookie } from "@/src/hooks";
 import { GETBooking } from "@/src/utils";
 
 import { About, Contact, Home, Packages, Portfolio } from "./batches";
@@ -8,6 +8,7 @@ import { About, Contact, Home, Packages, Portfolio } from "./batches";
 type T = Readonly<PropsWithChildren>;
 
 export const Main: FC<T> = async (props): Promise<ReactElement> => {
+  const language = await getCookie("language");
   const session = await getAllSession();
 
   const fetchBooking = async () => {
@@ -22,11 +23,11 @@ export const Main: FC<T> = async (props): Promise<ReactElement> => {
 
   return (
     <main>
-      <Home response={session?.user?.role !== "demo" ? await fetchBooking() : undefined} session={session} />
-      <About />
-      <Portfolio />
-      <Packages />
-      <Contact />
+      <Home language={language} response={session?.user?.role !== "demo" ? await fetchBooking() : undefined} session={session} />
+      <About language={language} />
+      <Portfolio language={language} />
+      <Packages language={language} />
+      <Contact language={language} />
       {props.children}
     </main>
   );

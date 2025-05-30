@@ -120,12 +120,12 @@ export const EXAMPLE_PACKAGES_DATA = [
 
 // ----------------------------
 
-export const NAVIGATION_DATA = (dt: TTranslations) => [
-  { href: "#home", id: 1, label: dt.navigation[0] },
-  { href: "#about", id: 2, label: dt.navigation[1] },
-  { href: "#portfolio", id: 3, label: dt.navigation[2] },
-  { href: "#packages", id: 4, label: dt.navigation[3] },
-  { href: "#contact", id: 5, label: dt.navigation[4] },
+export const NAVIGATION_DATA = (dt?: TTranslations) => [
+  { href: "#home", id: 1, label: dt?.navigation[0] },
+  { href: "#about", id: 2, label: dt?.navigation[1] },
+  { href: "#portfolio", id: 3, label: dt?.navigation[2] },
+  { href: "#packages", id: 4, label: dt?.navigation[3] },
+  { href: "#contact", id: 5, label: dt?.navigation[4] },
 ];
 
 // ----------------------------
@@ -141,81 +141,45 @@ export const TIME_SLOTS_DATA = [
 
 // ----------------------------
 
-export const PACKAGES_DATA = [
+export const PACKAGES_DATA = (dt?: TTranslations) => [
   {
-    description: [
-      { id: 1, text: "Three-time Makeup" },
-      { id: 2, text: "Henna" },
-      { id: 3, text: "Fake Nails" },
-      { id: 4, text: "Softlens" },
-      { id: 5, text: "Retouch Session" },
-      { id: 6, text: "Transportation" },
-    ],
+    description: dt?.packages.list[0],
     id: 1,
     price: "3500000",
     title: "WEDDING A",
   },
   {
-    description: [
-      { id: 1, text: "Two-time Makeup" },
-      { id: 2, text: "Henna" },
-      { id: 3, text: "Fake Nails" },
-      { id: 4, text: "Softlens" },
-      { id: 5, text: "Retouch Session" },
-      { id: 6, text: "Transportation" },
-    ],
+    description: dt?.packages.list[1],
     id: 2,
     price: "2500000",
     title: "WEDDING B",
   },
   {
-    description: [
-      { id: 1, text: "One-time Makeup" },
-      { id: 2, text: "Henna" },
-      { id: 3, text: "Fake Nails" },
-      { id: 4, text: "Softlens" },
-      { id: 5, text: "Retouch Session" },
-      { id: 6, text: "Transportation" },
-    ],
+    description: dt?.packages.list[2],
     id: 3,
     price: "1500000",
     title: "WEDDING C",
   },
   {
-    description: [
-      { id: 1, text: "Softlens" },
-      { id: 2, text: "Hijab Installation" },
-      { id: 3, text: "Transportation" },
-    ],
+    description: dt?.packages.list[3],
     id: 4,
     price: "450000",
     title: "PREWEDDING",
   },
   {
-    description: [
-      { id: 1, text: "Softlens" },
-      { id: 2, text: "Hijab Installation" },
-      { id: 3, text: "Transportation" },
-    ],
+    description: dt?.packages.list[4],
     id: 5,
     price: "350000",
     title: "ENGAGEMENT",
   },
   {
-    description: [
-      { id: 1, text: "Softlens" },
-      { id: 2, text: "Hijab Installation" },
-      { id: 3, text: "Transportation" },
-    ],
+    description: dt?.packages.list[5],
     id: 6,
     price: "300000",
     title: "GRADUATION",
   },
   {
-    description: [
-      { id: 1, text: "Hijab Installation" },
-      { id: 2, text: "Transportation" },
-    ],
+    description: dt?.packages.list[6],
     id: 7,
     price: "200000",
     title: "REGULAR",
@@ -224,46 +188,46 @@ export const PACKAGES_DATA = [
 
 // ----------------------------
 
-export const TESTIMONIALS_DATA = [
+export const TESTIMONIALS_DATA = (dt?: TTranslations) => [
   {
     id: 1,
     image: testimonialsImage3,
     name: "Emily Carter",
     rating: 5,
-    role: "ACTRESS",
-    text: "The makeup was done with great attention to detail and provided a flawless look for every scene. Very satisfying!",
+    role: dt?.testimonials.list[1].role,
+    word: dt?.testimonials.list[1].word,
   },
   {
     id: 2,
     image: testimonialsImage2,
     name: "Linda Martinez",
     rating: 5,
-    role: "MODEL",
-    text: "Such a pleasant experience! The makeup turned out exactly as I wanted. Highly recommended!",
+    role: dt?.testimonials.list[2].role,
+    word: dt?.testimonials.list[2].word,
   },
   {
     id: 3,
     image: testimonialsImage1,
     name: "Sarah Anderson",
     rating: 5,
-    role: "BRIDE",
-    text: "Amazing makeup service! The results were very natural and long-lasting. Highly professional and punctual.",
+    role: dt?.testimonials.list[3].role,
+    word: dt?.testimonials.list[3].word,
   },
   {
     id: 4,
     image: testimonialsImage4,
     name: "Jessica Lee",
     rating: 5,
-    role: "BRIDESMAID",
-    text: "Beautiful makeup that perfectly matched the wedding theme. I felt so confident all day long.",
+    role: dt?.testimonials.list[4].role,
+    word: dt?.testimonials.list[4].word,
   },
   {
     id: 5,
     image: testimonialsImage5,
     name: "Sophia Wilson",
     rating: 5,
-    role: "PHOTOGRAPHER",
-    text: "As a photographer, I was amazed by how flawless the makeup looked on camera. Highly recommend this service!",
+    role: dt?.testimonials.list[5].role,
+    word: dt?.testimonials.list[5].word,
   },
 ];
 

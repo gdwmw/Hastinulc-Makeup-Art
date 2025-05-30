@@ -1,5 +1,6 @@
 "use client";
 
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, ReactElement, useState } from "react";
@@ -9,19 +10,24 @@ import { IoStar } from "react-icons/io5";
 import testimonialsImage from "@/public/assets/images/model/Testimonials-1.jpg";
 import { ExampleA, ExampleATWM, SectionHeader } from "@/src/components";
 import { useGlobalStates } from "@/src/context";
-import { currencyFormat } from "@/src/hooks";
+import { currencyFormat, useLanguage } from "@/src/hooks";
 import { PACKAGES_DATA, TESTIMONIALS_DATA } from "@/src/libs";
 
-export const Packages: FC = (): ReactElement => {
+interface I {
+  language: RequestCookie | undefined;
+}
+
+export const Packages: FC<I> = (props): ReactElement => {
+  const language = useLanguage().get(props.language?.value ?? undefined);
   const { setBooking } = useGlobalStates();
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev + 1) % TESTIMONIALS_DATA.length);
+    setCurrentTestimonialIndex((prev) => (prev + 1) % TESTIMONIALS_DATA().length);
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev - 1 + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length);
+    setCurrentTestimonialIndex((prev) => (prev - 1 + TESTIMONIALS_DATA().length) % TESTIMONIALS_DATA().length);
   };
 
   return (
@@ -29,13 +35,13 @@ export const Packages: FC = (): ReactElement => {
       <section className="container mx-auto flex flex-col items-center gap-10 px-5">
         <SectionHeader
           className={{ container: "max-w-[1000px] text-center", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="With Hastinulc Makeup Art, You'll not get only your Dream Makeup services but also at affordable price."
-          subtitle="PACKAGES"
-          title="Choose Your Makeup Package"
+          description={language.packages.description}
+          subtitle={language.packages.subtitle}
+          title={language.packages.title}
         />
 
         <div className="flex w-fit flex-wrap justify-center gap-5">
-          {PACKAGES_DATA.map((dt) => (
+          {PACKAGES_DATA(language).map((dt) => (
             <div
               className="flex w-80 flex-col gap-4 rounded-lg border border-rose-500 bg-white p-5 text-center shadow-md transition-transform hover:scale-105 hover:shadow-lg"
               key={dt.id}
@@ -44,7 +50,7 @@ export const Packages: FC = (): ReactElement => {
               <span className="border-b border-rose-500 pb-4 font-montaguSlab text-4xl">{currencyFormat(dt.price, "IDR")}</span>
 
               <ul className="space-y-2 text-left">
-                {dt.description.map((ls, i) => (
+                {dt.description?.map((ls, i) => (
                   <li key={ls.id}>
                     <span className="font-bold text-rose-500">{i + 1}.</span> {ls.text}
                   </li>
@@ -61,7 +67,7 @@ export const Packages: FC = (): ReactElement => {
                 href={"/booking"}
                 onClick={() => setBooking({ package: dt.title })}
               >
-                <FaChevronRight size={14} /> BOOKING NOW
+                <FaChevronRight size={14} /> {language.packages.button[0]}
               </Link>
             </div>
           ))}
@@ -73,8 +79,8 @@ export const Packages: FC = (): ReactElement => {
           <SectionHeader
             className={{ container: "text-center sm:text-right", title: "text-4xl sm:text-nowrap sm:text-5xl md:text-6xl" }}
             description=""
-            subtitle="TESTIMONIALS"
-            title="Words From Clients"
+            subtitle={language.testimonials.subtitle}
+            title={language.testimonials.title}
           />
 
           <blockquote className="flex flex-col gap-5 rounded-lg bg-black p-5 text-white">
@@ -89,7 +95,7 @@ export const Packages: FC = (): ReactElement => {
               />
               <figcaption>
                 <span className="block font-montaguSlab text-2xl font-semibold text-rose-500">Danielle Jenkins</span>
-                <span className="block text-sm font-semibold tracking-wider text-white">SUPER MODEL</span>
+                <span className="block text-sm font-semibold tracking-wider text-white">{language.testimonials.list[0].role}</span>
               </figcaption>
             </figure>
 
@@ -99,16 +105,13 @@ export const Packages: FC = (): ReactElement => {
               ))}
             </div>
 
-            <p className="text-lg">
-              I am beyond impressed with the makeup artistry! The attention to detail and professionalism exceeded all my expectations. The look was
-              flawless and lasted all day. Highly recommended!
-            </p>
+            <p className="text-lg">{language.testimonials.list[0].word}</p>
           </blockquote>
         </div>
 
         <div className="flex w-full flex-col justify-center overflow-hidden rounded-lg border border-rose-500 bg-white py-8 shadow-md">
           <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentTestimonialIndex * 100}%)` }}>
-            {TESTIMONIALS_DATA.map((dt) => (
+            {TESTIMONIALS_DATA(language).map((dt) => (
               <blockquote className="flex w-full shrink-0 items-center justify-center px-8" key={dt.id}>
                 <div className="flex flex-col gap-5">
                   <figure className="flex items-center gap-4">
@@ -132,7 +135,7 @@ export const Packages: FC = (): ReactElement => {
                     ))}
                   </div>
 
-                  <p className="text-lg">{dt.text}</p>
+                  <p className="text-lg">{dt.word}</p>
                 </div>
               </blockquote>
             ))}
@@ -142,7 +145,7 @@ export const Packages: FC = (): ReactElement => {
 
           <div className="relative flex w-full items-center justify-center px-8 max-sm:flex-col max-sm:gap-7 sm:h-11">
             <div className="flex gap-2">
-              {TESTIMONIALS_DATA.map((_, i) => (
+              {TESTIMONIALS_DATA(language).map((_, i) => (
                 <button
                   className={`size-2 rounded-full transition-all duration-300 ${currentTestimonialIndex === i ? "w-4 bg-rose-500" : "bg-rose-300"}`}
                   key={i}
