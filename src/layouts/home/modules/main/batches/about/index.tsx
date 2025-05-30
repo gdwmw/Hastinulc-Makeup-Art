@@ -116,35 +116,39 @@ export const About: FC<I> = (props): ReactElement => {
           title={language.about[2].title}
         />
 
-        <footer className="z-[1] flex gap-3 font-montaguSlab max-md:flex-col md:gap-10">
-          <ul className="space-y-3">
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[0]}</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[1]}</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[2]}</span>
-            </li>
+        <footer className="z-[1] flex w-full gap-3 font-montaguSlab max-md:flex-col md:gap-10">
+          <ul className="basis-1/2">
+            <div className="mx-auto w-fit space-y-3">
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[0]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[1]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[2]}</span>
+              </li>
+            </div>
           </ul>
 
-          <ul className="space-y-3">
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[3]}</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[4]}</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[5]}</span>
-            </li>
+          <ul className="basis-1/2">
+            <div className="mx-auto w-fit space-y-3">
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[3]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[4]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[5]}</span>
+              </li>
+            </div>
           </ul>
         </footer>
       </section>
