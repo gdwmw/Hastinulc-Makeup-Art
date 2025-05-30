@@ -34,7 +34,7 @@ interface IFormField {
 const FORM_FIELDS_DATA = (dt: TTranslations): IFormField[] => [
   {
     id: 1,
-    label: dt.home.input[0],
+    label: dt.input[0],
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -42,13 +42,13 @@ const FORM_FIELDS_DATA = (dt: TTranslations): IFormField[] => [
   },
   {
     id: 2,
-    label: dt.home.input[1],
+    label: dt.input[1],
     name: "email",
     type: "email",
   },
   {
     id: 3,
-    label: dt.home.input[2],
+    label: dt.input[2],
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -57,14 +57,14 @@ const FORM_FIELDS_DATA = (dt: TTranslations): IFormField[] => [
   {
     id: 4,
     isSelect: true,
-    label: dt.home.input[3],
+    label: dt.input[3],
     name: "package",
     options: PACKAGES_DATA().map((dt) => dt.title),
   },
   {
     id: 5,
     isDatePicker: true,
-    label: dt.home.input[4],
+    label: dt.input[4],
     name: "date",
   },
 ];
@@ -252,7 +252,7 @@ export const Home: FC<I> = (props): ReactElement => {
                     className="mt-2 hidden w-64 lg:flex"
                     color="rose"
                     disabled={loading}
-                    label={language.home.button[0]}
+                    label={language.button[0]}
                     size="sm"
                     variant="solid"
                   />
@@ -263,7 +263,7 @@ export const Home: FC<I> = (props): ReactElement => {
                   className="mt-2 w-full lg:hidden"
                   color="rose"
                   disabled={loading}
-                  label={language.home.button[0]}
+                  label={language.button[0]}
                   size="sm"
                   variant="solid"
                 />

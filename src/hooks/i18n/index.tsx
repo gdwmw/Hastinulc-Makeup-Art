@@ -23,7 +23,7 @@ export const useLanguage = () => {
     }
   };
 
-  const get = (lang?: string | TLanguage | undefined): TTranslations => {
+  const get = (lang?: null | string | TLanguage | undefined): TTranslations => {
     if (language) {
       return SUPPORTED_LANGUAGES[language];
     }

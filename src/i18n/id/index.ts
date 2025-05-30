@@ -1,6 +1,8 @@
 import { idButton, idInput } from "./components";
 
 export const id = {
+  input: idInput,
+  button: idButton,
   navigation: ["Beranda", "Tentang", "Portofolio", "Paket", "Kontak", "Profil", "Riwayat", "Kuesioner"],
   // ----------------------------
   home: {
@@ -10,8 +12,6 @@ export const id = {
       description:
         "Memberikan sentuhan kecantikan elegan dan profesional untuk momen spesial Anda. Percayakan pada kami untuk menampilkan penampilan terbaik Anda.",
     },
-    input: idInput,
-    button: idButton,
     contact: "Butuh bantuan? Hubungi kami",
   },
   // ----------------------------
@@ -50,14 +50,12 @@ export const id = {
     title: "Menampilkan Karya Terbaik Kami",
     description:
       "Portofolio kami menunjukkan seni dan ketelitian yang menjadi ciri khas pekerjaan kami. Dari tampilan yang berani dan dramatis hingga keanggunan alami yang lembut, setiap gambar mencerminkan dedikasi kami terhadap kesempurnaan. Dengan pengalaman lebih dari 15 tahun, kami telah mengubah banyak wajah menjadi karya seni yang abadi untuk setiap kesempatan spesial. Jelajahi karya kami dan temukan inspirasi untuk tampilan tak terlupakan Anda selanjutnya.",
-    button: idButton,
   },
   // ----------------------------
   packages: {
     subtitle: "PAKET",
     title: "Pilih Paket Makeup Anda",
     description: "Dengan Hastinulc Makeup Art, Anda tidak hanya mendapatkan layanan rias impian, tapi juga harga yang terjangkau.",
-    button: idButton,
     list: [
       [
         { id: 1, text: "Makeup Tiga Kali" },
@@ -110,7 +108,7 @@ export const id = {
     title: "Kata Klien Kami",
     list: [
       {
-        role: "SUPERMODEL",
+        role: "SUPER MODEL",
         word: "Saya sangat terkesan dengan hasil makeup-nya! Perhatian terhadap detail dan profesionalismenya melebihi ekspektasi saya. Hasilnya sempurna dan tahan lama. Sangat direkomendasikan!",
       },
       {
@@ -137,7 +135,7 @@ export const id = {
   },
   // ----------------------------
   contact: {
-    subtitle: "HUBUNGI KAMI",
+    subtitle: "KONTAK",
     title: "Hubungi Kami",
     description:
       "Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin melakukan pemesanan. Kami di sini untuk memberikan pelayanan terbaik dan memastikan momen spesial Anda tak terlupakan. Mari kita wujudkan keindahan bersama.",

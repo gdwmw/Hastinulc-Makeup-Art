@@ -67,7 +67,7 @@ export const Packages: FC<I> = (props): ReactElement => {
                 href={"/booking"}
                 onClick={() => setBooking({ package: dt.title })}
               >
-                <FaChevronRight size={14} /> {language.packages.button[0]}
+                <FaChevronRight size={14} /> {language.button[0]}
               </Link>
             </div>
           ))}

@@ -1,6 +1,8 @@
 import { enButton, enInput } from "./components";
 
 export const en = {
+  input: enInput,
+  button: enButton,
   navigation: ["Home", "About", "Portfolio", "Packages", "Contact", "Profile", "History", "Questionnaire"],
   // ----------------------------
   home: {
@@ -9,8 +11,6 @@ export const en = {
       title: "Professional Makeup Artist",
       description: "Delivering elegant and professional beauty touches for your special moments. Trust us to bring out your best look.",
     },
-    input: enInput,
-    button: enButton,
     contact: "Need Help? Contact us",
   },
   // ----------------------------
@@ -49,14 +49,12 @@ export const en = {
     title: "Showcasing Our Masterpieces",
     description:
       "Our portfolio highlights the artistry and precision that define our work. From bold, dramatic looks to soft, natural elegance, each image reflects our dedication to perfection. With over 15 years of expertise, we have transformed countless faces into timeless masterpieces for every special occasion. Explore our work and let us inspire your next unforgettable look.",
-    button: enButton,
   },
   // ----------------------------
   packages: {
     subtitle: "PACKAGES",
     title: "Choose Your Makeup Package",
     description: "With Hastinulc Makeup Art, You'll not get only your Dream Makeup services but also at affordable price.",
-    button: enButton,
     list: [
       [
         { id: 1, text: "Three-time Makeup" },

@@ -35,7 +35,7 @@ export const Portfolio: FC<I> = (props): ReactElement => {
           prefetch={false}
           target="_blank"
         >
-          <FaChevronRight size={14} /> {language.portfolio.button[1]}
+          <FaChevronRight size={14} /> {language.button[1]}
         </Link>
       </div>
     </section>
