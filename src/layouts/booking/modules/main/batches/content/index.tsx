@@ -55,7 +55,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
     isSelect: true,
     label: "Package",
     name: "package",
-    options: PACKAGES_DATA.map((dt) => dt.title),
+    options: PACKAGES_DATA().map((dt) => dt.title),
   },
   {
     id: 5,
@@ -127,7 +127,7 @@ export const Content: FC<I> = (props): ReactElement => {
   }, [date]);
 
   useEffect(() => {
-    const selectedPackage = PACKAGES_DATA.find((dt) => dt.title === watch("package"));
+    const selectedPackage = PACKAGES_DATA().find((dt) => dt.title === watch("package"));
     const price = parseInt(selectedPackage?.price ?? "0");
     setTax(price * 0.12);
     setSubtotal(price);

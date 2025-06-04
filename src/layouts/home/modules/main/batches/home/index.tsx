@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Session } from "next-auth";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,7 +14,7 @@ import accentDot from "@/public/assets/images/background/Accent-Dot.svg";
 import homeImage from "@/public/assets/images/model/Home.png";
 import { DatePickerInput, Input, SectionHeader, Select, SubmitButton } from "@/src/components";
 import { useGlobalStates } from "@/src/context";
-import { inputValidations } from "@/src/hooks";
+import { inputValidations, TTranslations, useLanguage } from "@/src/hooks";
 import { PACKAGES_DATA } from "@/src/libs";
 import { HomeBookingSchema, THomeBookingSchema } from "@/src/schemas";
 import { IBookingResponse } from "@/src/types";
@@ -30,10 +31,10 @@ interface IFormField {
   type?: HTMLInputTypeAttribute;
 }
 
-const FORM_FIELDS_DATA: IFormField[] = [
+const FORM_FIELDS_DATA = (dt: TTranslations): IFormField[] => [
   {
     id: 1,
-    label: "Name",
+    label: dt.input[0],
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -41,13 +42,13 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 2,
-    label: "Email",
+    label: dt.input[1],
     name: "email",
     type: "email",
   },
   {
     id: 3,
-    label: "Phone",
+    label: dt.input[2],
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -56,24 +57,26 @@ const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 4,
     isSelect: true,
-    label: "Package",
+    label: dt.input[3],
     name: "package",
-    options: PACKAGES_DATA.map((dt) => dt.title),
+    options: PACKAGES_DATA().map((dt) => dt.title),
   },
   {
     id: 5,
     isDatePicker: true,
-    label: "Date",
+    label: dt.input[4],
     name: "date",
   },
 ];
 
 interface I {
+  language: RequestCookie | undefined;
   response: IBookingResponse[] | null | undefined;
   session: null | Session;
 }
 
 export const Home: FC<I> = (props): ReactElement => {
+  const language = useLanguage().get(props.language?.value ?? undefined);
   const router = useRouter();
   const { setBooking } = useGlobalStates();
   const [screenWidth, setScreenWidth] = useState(0);
@@ -169,9 +172,9 @@ export const Home: FC<I> = (props): ReactElement => {
                 subtitle: "z-[1] -mb-5",
                 title: "z-[1] max-w-[500px] text-5xl sm:max-w-[600px] sm:text-6xl md:max-w-[700px] md:text-7xl lg:max-w-[800px] lg:text-8xl",
               }}
-              description="Delivering elegant and professional beauty touches for your special moments. Trust us to bring out your best look."
-              subtitle="BEAUTIFY"
-              title="Professional Makeup Artist"
+              description={language.home.hero.description}
+              subtitle={language.home.hero.subtitle}
+              title={language.home.hero.title}
             />
           </div>
         </section>
@@ -183,69 +186,87 @@ export const Home: FC<I> = (props): ReactElement => {
             <div className="flex size-full items-center justify-center gap-20">
               <form className="flex w-full flex-col items-center justify-center lg:w-fit" onSubmit={handleSubmit(onSubmit)}>
                 <div className="hidden w-full items-center gap-5 lg:flex">
-                  {FORM_FIELDS_DATA.slice(0, 3).map((dt) => (
-                    <Input
-                      className={{ container: "w-64" }}
-                      color="rose"
-                      disabled={loading}
-                      errorMessage={errors[dt.name]?.message}
-                      key={dt.id}
-                      label={dt.label ?? ""}
-                      maxLength={dt.maxLength}
-                      onKeyDown={dt.onKeyDown}
-                      type={dt.type}
-                      {...register(dt.name)}
-                    />
-                  ))}
+                  {FORM_FIELDS_DATA(language)
+                    .slice(0, 3)
+                    .map((dt) => (
+                      <Input
+                        className={{ container: "w-64" }}
+                        color="rose"
+                        disabled={loading}
+                        errorMessage={errors[dt.name]?.message}
+                        key={dt.id}
+                        label={dt.label ?? ""}
+                        maxLength={dt.maxLength}
+                        onKeyDown={dt.onKeyDown}
+                        type={dt.type}
+                        {...register(dt.name)}
+                      />
+                    ))}
                 </div>
 
                 <div className="flex w-full items-center gap-1 sm:gap-3 md:gap-5">
-                  {FORM_FIELDS_DATA.slice(3).map((dt) => {
-                    if (dt.isSelect) {
-                      return (
-                        <Select
-                          className={{ container: "w-full lg:w-64", select: "h-[26px]" }}
-                          color="rose"
-                          disabled={loading}
-                          errorMessage={errors[dt.name]?.message}
-                          key={dt.id}
-                          label={dt.label ?? ""}
-                          {...register(dt.name)}
-                        >
-                          <option value="-">-</option>
-                          {dt.options?.map((opt, i) => (
-                            <option key={i} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </Select>
-                      );
-                    }
+                  {FORM_FIELDS_DATA(language)
+                    .slice(3)
+                    .map((dt) => {
+                      if (dt.isSelect) {
+                        return (
+                          <Select
+                            className={{ container: "w-full lg:w-64", select: "h-[26px]" }}
+                            color="rose"
+                            disabled={loading}
+                            errorMessage={errors[dt.name]?.message}
+                            key={dt.id}
+                            label={dt.label ?? ""}
+                            {...register(dt.name)}
+                          >
+                            <option value="-">-</option>
+                            {dt.options?.map((opt, i) => (
+                              <option key={i} value={opt}>
+                                {opt}
+                              </option>
+                            ))}
+                          </Select>
+                        );
+                      }
 
-                    if (dt.isDatePicker) {
-                      return (
-                        <DatePickerInput
-                          className={{ container: "z-[2] w-full lg:w-64" }}
-                          color="rose"
-                          dateFormat="yyyy/MM/dd"
-                          disabled={loading}
-                          errorMessage={errors[dt.name]?.message}
-                          excludeDates={bookedDates}
-                          key={dt.id}
-                          label={dt.label ?? ""}
-                          minDate={new Date()}
-                          onChange={(value: Date | null) => value && setDate(value)}
-                          selected={date}
-                        />
-                      );
-                    }
-                  })}
+                      if (dt.isDatePicker) {
+                        return (
+                          <DatePickerInput
+                            className={{ container: "z-[2] w-full lg:w-64" }}
+                            color="rose"
+                            dateFormat="yyyy/MM/dd"
+                            disabled={loading}
+                            errorMessage={errors[dt.name]?.message}
+                            excludeDates={bookedDates}
+                            key={dt.id}
+                            label={dt.label ?? ""}
+                            minDate={new Date()}
+                            onChange={(value: Date | null) => value && setDate(value)}
+                            selected={date}
+                          />
+                        );
+                      }
+                    })}
 
-                  <SubmitButton className="mt-2 hidden w-64 lg:flex" color="rose" disabled={loading} label="BOOKING NOW" size="sm" variant="solid" />
+                  <SubmitButton
+                    className="mt-2 hidden w-64 lg:flex"
+                    color="rose"
+                    disabled={loading}
+                    label={language.button[0]}
+                    size="sm"
+                    variant="solid"
+                  />
                 </div>
 
                 {/* Components For Responsive Purposes Only */}
-                <SubmitButton className="mt-2 w-full lg:hidden" color="rose" disabled={loading} label="BOOKING NOW" size="sm" variant="solid" />
+                <SubmitButton
+                  className="mt-2 w-full lg:hidden"
+                  color="rose"
+                  disabled={loading}
+                  label={language.button[0]}
+                  size="sm"
+                  variant="solid"
+                />
               </form>
 
               <address className="hidden items-center gap-2 xl:flex">
@@ -258,7 +279,7 @@ export const Home: FC<I> = (props): ReactElement => {
                   <IoLogoWhatsapp size={40} />
                 </Link>
                 <div>
-                  <span className="-mb-1 block text-lg">Need Help? Contact us</span>
+                  <span className="-mb-1 block text-lg">{language.home.contact}</span>
                   <Link
                     className="inline-block text-2xl font-semibold not-italic text-rose-500 active:scale-95 active:text-rose-400"
                     href={"https://wa.me/6285762346703"}

@@ -16,7 +16,7 @@ export const BookingSchema = z.object({
       message: schemaErrorMessage.string.url("Google Maps Link"),
     }),
   name: z.string().min(3, { message: schemaErrorMessage.string.min("Name", 3) }),
-  package: z.enum(PACKAGES_DATA.map((dt) => dt.title) as [string, ...string[]], {
+  package: z.enum(PACKAGES_DATA().map((dt) => dt.title) as [string, ...string[]], {
     errorMap: () => ({ message: schemaErrorMessage.string.enum("Package") }),
   }),
   phoneNumber: z.string().min(10, { message: schemaErrorMessage.string.min("Phone", 10) }),

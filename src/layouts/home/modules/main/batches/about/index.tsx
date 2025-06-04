@@ -1,5 +1,6 @@
 "use client";
 
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
 import { FC, ReactElement, useState } from "react";
 import { FaCheck, FaPlay } from "react-icons/fa";
@@ -14,8 +15,14 @@ import aboutImage5 from "@/public/assets/images/model/About-5.jpg";
 import aboutImage6 from "@/public/assets/images/model/About-6.jpg";
 import aboutImage7 from "@/public/assets/images/model/About-7.jpg";
 import { SectionHeader } from "@/src/components";
+import { useLanguage } from "@/src/hooks";
 
-export const About: FC = (): ReactElement => {
+interface I {
+  language: RequestCookie | undefined;
+}
+
+export const About: FC<I> = (props): ReactElement => {
+  const language = useLanguage().get(props.language?.value ?? undefined);
   const [active, setActive] = useState(false);
 
   return (
@@ -44,11 +51,7 @@ export const About: FC = (): ReactElement => {
 
           <figcaption className="absolute left-1/2 top-1/2 z-[2] flex size-52 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white">
             <span className="font-montaguSlab text-7xl text-rose-500">15+</span>
-            <span className="text-center font-montaguSlab">
-              Years of
-              <br />
-              Experience
-            </span>
+            <span className="whitespace-pre text-center font-montaguSlab">{language.about[0].experience}</span>
           </figcaption>
 
           <Image alt="Accent Rectangle" className="absolute -bottom-20 -left-36" src={accentRectangle} width={420} />
@@ -56,18 +59,18 @@ export const About: FC = (): ReactElement => {
 
         <SectionHeader
           className={{ container: "max-w-[500px] border-b border-rose-200 pb-8", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="At Hastinulc Makeup Art, we believe every face tells a story, and we're here to make it shine. With over 15 years of experience, we specialize in enhancing natural beauty and creating unforgettable looks for every special moment. Trust us to bring out your confidence and elegance with our professional makeup services."
-          subtitle="WELCOME TO"
-          title="Best Professional Makeup Artist"
+          description={language.about[0].description}
+          subtitle={language.about[0].subtitle}
+          title={language.about[0].title}
         />
       </section>
 
       <section className="container mx-auto flex justify-between gap-10 px-5 max-lg:flex-col lg:gap-5">
         <SectionHeader
           className={{ container: "max-w-[700px] max-lg:text-right", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="Every moment deserves to be extraordinary, and we are here to make that happen. From weddings to special events, our expert touch ensures you'll look and feel your absolute best. Let us create memories that last a lifetime with flawless and personalized beauty services."
-          subtitle="SPECIALS"
-          title="We're Here to Make Your Day Memorable"
+          description={language.about[1].description}
+          subtitle={language.about[1].subtitle}
+          title={language.about[1].title}
         />
 
         <div className="flex gap-5 max-lg:justify-center">
@@ -108,40 +111,44 @@ export const About: FC = (): ReactElement => {
 
         <SectionHeader
           className={{ container: "z-[1] max-w-[700px] text-center", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="Choosing the right makeup artist is key to making your special day unforgettable. We combine skill, passion, and attention to detail to ensure your beauty shines through every moment. Here's why we stand out."
-          subtitle="WHY US"
-          title="Why Choose Us?"
+          description={language.about[2].description}
+          subtitle={language.about[2].subtitle}
+          title={language.about[2].title}
         />
 
-        <footer className="z-[1] flex gap-3 font-montaguSlab max-md:flex-col md:gap-10">
-          <ul className="space-y-3">
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">We travel to you, no matter how far</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">We provide full services for you</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">We you pick out the perfect makeup</span>
-            </li>
+        <footer className="z-[1] flex w-full gap-3 font-montaguSlab max-md:flex-col md:gap-10">
+          <ul className="basis-1/2">
+            <div className="mx-auto w-fit space-y-3">
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[0]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[1]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[2]}</span>
+              </li>
+            </div>
           </ul>
 
-          <ul className="space-y-3">
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">We keep calm & fun on your special day</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">We are a very professional team</span>
-            </li>
-            <li className="flex items-center gap-5">
-              <FaCheck className="text-rose-500" size={20} />
-              <span className="md:text-sm lg:text-xl xl:text-2xl">Quarantee for you who are not satisfied</span>
-            </li>
+          <ul className="basis-1/2">
+            <div className="mx-auto w-fit space-y-3">
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[3]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[4]}</span>
+              </li>
+              <li className="flex items-center gap-5">
+                <FaCheck className="min-w-fit text-rose-500" size={20} />
+                <span className="md:text-sm lg:text-xl xl:text-2xl">{language.about[2].list?.[5]}</span>
+              </li>
+            </div>
           </ul>
         </footer>
       </section>

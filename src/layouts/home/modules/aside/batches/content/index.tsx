@@ -13,7 +13,6 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { DetailedAvatar, ExampleA, ExampleATWM } from "@/src/components";
 import { useGlobalStates } from "@/src/context";
 import { questionnaireConditions as conditions, useLanguage } from "@/src/hooks";
-import { en } from "@/src/i18n";
 import { NAVIGATION_DATA } from "@/src/libs";
 import { IDataResponse } from "@/src/types";
 
@@ -41,7 +40,7 @@ export const Content: FC<I> = (props): ReactElement => {
 
   useEffect(() => {
     const handleActiveSection = () => {
-      const sections = NAVIGATION_DATA(en).map((item) => document.querySelector(item.href));
+      const sections = NAVIGATION_DATA().map((item) => document.querySelector(item.href));
 
       sections.forEach((section) => {
         if (section) {

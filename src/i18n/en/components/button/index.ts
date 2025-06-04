@@ -1,1 +1,1 @@
-export const idButton = ["BOOKING NOW", "VIEW MORE"];
+export const enButton = ["BOOKING NOW", "VIEW MORE"];
