@@ -18,11 +18,12 @@ export const useLanguage = () => {
   const set = (lang: TLanguage) => {
     if (lang in SUPPORTED_LANGUAGES) {
       setLanguage(lang);
+      localStorage.setItem("language", lang);
       setCookie({ name: "language", value: lang });
     }
   };
 
-  const get = (lang?: string | TLanguage | undefined): TTranslations => {
+  const get = (lang?: null | string | TLanguage | undefined): TTranslations => {
     if (language) {
       return SUPPORTED_LANGUAGES[language];
     }
