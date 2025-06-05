@@ -217,7 +217,7 @@ const Component: FC<IComponent> = (props): ReactElement => (
         <div className="flex justify-between gap-3 max-[450px]:flex-col">
           <figure className="flex items-center gap-3">
             <div className="flex size-8 items-center justify-center rounded-full bg-rose-100">
-              <FaBox className="size-[12px] text-rose-500 max-[400px]:size-[10px]" />
+              <FaBox className="text-rose-500" size={12} />
             </div>
             <figcaption>
               <h2 className="text-gray-500">Package</h2>
