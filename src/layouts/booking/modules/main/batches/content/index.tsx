@@ -30,7 +30,7 @@ interface IFormField {
 const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 1,
-    label: "Name",
+    label: "Nama",
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -44,7 +44,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 3,
-    label: "Phone",
+    label: "Telepon",
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -53,14 +53,14 @@ const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 4,
     isSelect: true,
-    label: "Package",
+    label: "Paket",
     name: "package",
     options: PACKAGES_DATA.map((dt) => dt.title),
   },
   {
     id: 5,
     isDatePicker: true,
-    label: "Date",
+    label: "Tanggal",
     name: "date",
   },
   {
@@ -71,7 +71,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 7,
-    label: "Google Maps Link",
+    label: "Tautan Google Maps",
     name: "googleMapsLink",
     type: "url",
   },
@@ -150,25 +150,25 @@ export const Content: FC<I> = (props): ReactElement => {
       try {
         const res = await POSTBooking(newPayload);
 
-        const whatsappMessage = `*Hastinulc Makeup Art | Booking Details | ${dt.name}*
+        const whatsappMessage = `*Hastinulc Makeup Art | Detail Booking | ${dt.name}*
   
-  • *Booking ID:* ${res.documentId}
-  • *Name:* ${dt.name}
+  • *ID Booking:* ${res.documentId}
+  • *Nama:* ${dt.name}
   • *Email:* ${dt.email}
-  • *Phone:* ${dt.phoneNumber}
+  • *Telepon:* ${dt.phoneNumber}
   
-  • *Package:* ${dt.package}
-  • *Date:* ${dt.date}
-  • *Time:* ${dt.time}
-  • *Location:* ${dt.googleMapsLink}
+  • *Paket:* ${dt.package}
+  • *Tanggal:* ${dt.date}
+  • *Waktu:* ${dt.time}
+  • *Lokasi:* ${dt.googleMapsLink}
   
   • *Status:* Waiting
   
   • *Subtotal:* Rp${subtotal.toLocaleString()}
-  • *Tax (PPN):* Rp${tax.toLocaleString()}
+  • *Pajak (PPN):* Rp${tax.toLocaleString()}
   • *TOTAL:* Rp${total.toLocaleString()}
   
-I'm looking forward to your *confirmation*. Thank you!`;
+Saya menunggu *konfirmasi* Anda. Terima kasih!`;
 
         const encodedMessage = encodeURIComponent(whatsappMessage);
 
@@ -191,7 +191,7 @@ I'm looking forward to your *confirmation*. Thank you!`;
           innerContainer: "size-full max-h-[821px] max-w-[600px] gap-5 lg:max-w-[1000px]",
         }}
         href="/"
-        label="Home"
+        label="Beranda"
       >
         <form className="flex w-full items-start overflow-y-auto lg:max-w-[500px]" onSubmit={handleSubmit(onSubmit)}>
           <div className="my-auto flex w-full flex-col justify-center gap-4">
@@ -251,6 +251,36 @@ I'm looking forward to your *confirmation*. Thank you!`;
                 );
               }
 
+              if (dt.type === "url") {
+                return (
+                  <Fragment key={dt.id}>
+                    <Input
+                      color="rose"
+                      disabled={loading}
+                      errorMessage={errors[dt.name]?.message}
+                      key={dt.id}
+                      label={dt.label ?? ""}
+                      maxLength={dt.maxLength}
+                      onKeyDown={dt.onKeyDown}
+                      type={dt.type}
+                      {...register(dt.name)}
+                    />
+                    <span className="text-xs italic text-rose-400">*Harap bagikan tautan lokasi Google Maps</span>
+                    <div className="flex justify-center gap-1 max-[380px]:flex-col max-[380px]:items-center">
+                      <span className="text-xs">Tidak tahu cara mendapatkan tautan Google Maps?</span>
+                      <Link
+                        className={ExampleATWM({ className: "text-xs", color: "rose", disabled: loading, size: "sm", variant: "ghost" })}
+                        href={"https://drive.google.com/drive/folders/1czzvGaymg_aEkVhRe00CBz-X_PR2hoxA?usp=sharing"}
+                        onClick={(e) => loading && e.preventDefault()}
+                        target="_blank"
+                      >
+                        Klik di sini!
+                      </Link>
+                    </div>
+                  </Fragment>
+                );
+              }
+
               return (
                 <Fragment key={dt.id}>
                   <Input
@@ -264,27 +294,11 @@ I'm looking forward to your *confirmation*. Thank you!`;
                     type={dt.type}
                     {...register(dt.name)}
                   />
-                  {dt.type === "url" && (
-                    <>
-                      <span className="text-xs italic text-rose-400">*Please share Google Maps location link</span>
-                      <div className="flex justify-center gap-1 max-[380px]:flex-col max-[380px]:items-center">
-                        <span className="text-xs">Don&apos;t know how to get Google Maps Link?</span>
-                        <Link
-                          className={ExampleATWM({ className: "text-xs", color: "rose", disabled: loading, size: "sm", variant: "ghost" })}
-                          href={"https://drive.google.com/drive/folders/1czzvGaymg_aEkVhRe00CBz-X_PR2hoxA?usp=sharing"}
-                          onClick={(e) => loading && e.preventDefault()}
-                          target="_blank"
-                        >
-                          Click here!
-                        </Link>
-                      </div>
-                    </>
-                  )}
                 </Fragment>
               );
             })}
 
-            <SubmitButton color="rose" disabled={loading} label="BOOKING NOW" size="sm" variant="solid" />
+            <SubmitButton color="rose" disabled={loading} label="PESAN SEKARANG" size="sm" variant="solid" />
           </div>
         </form>
 

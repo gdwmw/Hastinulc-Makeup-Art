@@ -48,14 +48,14 @@ export const Content: FC = (): ReactElement => {
 
         if (!res?.ok) {
           if (report?.[0] === false) {
-            setErrorMessage("Your Account Has Not Been Confirmed");
-            throw new Error("Your Account Has Not Been Confirmed");
+            setErrorMessage("Akun Anda Belum Dikonfirmasi");
+            throw new Error("Akun Anda Belum Dikonfirmasi");
           } else if (report?.[1] === true) {
-            setErrorMessage("Your Account Has Been Blocked");
-            throw new Error("Your Account Has Been Blocked");
+            setErrorMessage("Akun Anda Telah Diblokir");
+            throw new Error("Akun Anda Telah Diblokir");
           } else {
-            setErrorMessage(loginWithEmail ? "Invalid Email Or Password" : "Invalid Username Or Password");
-            throw new Error(loginWithEmail ? "Invalid Email Or Password" : "Invalid Username Or Password");
+            setErrorMessage(loginWithEmail ? "Email atau Password Salah" : "Username atau Password Salah");
+            throw new Error(loginWithEmail ? "Email atau Password Salah" : "Username atau Password Salah");
           }
         }
 
@@ -73,7 +73,7 @@ export const Content: FC = (): ReactElement => {
 
   return (
     <main className="bg-slate-100 dark:bg-slate-900">
-      <FormContainer className={{ innerContainer: "w-full max-w-[300px]" }} href={"/"} label={"Home"}>
+      <FormContainer className={{ innerContainer: "w-full max-w-[300px]" }} href={"/"} label={"Beranda"}>
         <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
           <Input
             color="rose"
@@ -104,10 +104,10 @@ export const Content: FC = (): ReactElement => {
 
           <span className="text-center text-sm text-red-600">{errorMessage}</span>
 
-          <SubmitButton color="rose" disabled={loading} label="LOGIN" size="sm" variant="solid" />
+          <SubmitButton color="rose" disabled={loading} label="MASUK" size="sm" variant="solid" />
 
           <div className="flex justify-center gap-1">
-            <span className="text-xs">Don&apos;t have an account yet?</span>
+            <span className="text-xs">Belum punya akun?</span>
             <Link
               className={ExampleATWM({ className: "text-xs", color: "rose", disabled: loading, size: "sm", variant: "ghost" })}
               href={"/authentication/register"}
@@ -121,7 +121,7 @@ export const Content: FC = (): ReactElement => {
                 }
               }}
             >
-              Register!
+              Daftar!
             </Link>
           </div>
         </form>

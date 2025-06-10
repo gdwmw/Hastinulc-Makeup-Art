@@ -20,7 +20,7 @@ const ReviewResult: FC<I> = (props): ReactElement => (
   <section className="w-full max-w-[400px] rounded-lg border border-gray-200 bg-white p-6 shadow-md">
     <header>
       <h1 className="mb-4 text-center text-xl font-bold tracking-widest text-rose-400 max-[450px]:text-base max-[380px]:text-sm">
-        -- YOUR REVIEW --
+        -- ULASAN ANDA --
       </h1>
       <div className="my-3 border-t border-gray-300" />
     </header>
@@ -42,20 +42,20 @@ const ReviewResult: FC<I> = (props): ReactElement => (
       </div>
 
       <div className="flex flex-col gap-3">
-        <dt className="font-medium text-gray-600">Description:</dt>
+        <dt className="font-medium text-gray-600">Deskripsi:</dt>
         <dd className="rounded-lg border border-gray-200 bg-gray-50 p-3">
           <p className="leading-relaxed">{props.data.description || "-"}</p>
         </dd>
       </div>
 
       <div className="flex flex-col gap-3">
-        <dt className="font-medium text-gray-600">Images:</dt>
+        <dt className="font-medium text-gray-600">Gambar:</dt>
         <dd className="grid grid-cols-2 gap-3 md:grid-cols-3">
           {props.data.image ? (
             props.data.image.map((dt, i) => (
               <div className="relative aspect-square overflow-hidden rounded-lg border border-gray-200" key={i}>
                 <Image
-                  alt="Review Image"
+                  alt="Gambar Ulasan"
                   className="object-cover"
                   fill
                   quality={50}

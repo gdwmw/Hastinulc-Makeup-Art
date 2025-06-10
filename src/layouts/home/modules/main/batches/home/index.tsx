@@ -33,7 +33,7 @@ interface IFormField {
 const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 1,
-    label: "Name",
+    label: "Nama",
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -47,7 +47,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 3,
-    label: "Phone",
+    label: "Telepon",
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -56,14 +56,14 @@ const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 4,
     isSelect: true,
-    label: "Package",
+    label: "Paket",
     name: "package",
     options: PACKAGES_DATA.map((dt) => dt.title),
   },
   {
     id: 5,
     isDatePicker: true,
-    label: "Date",
+    label: "Tanggal",
     name: "date",
   },
 ];
@@ -169,8 +169,8 @@ export const Home: FC<I> = (props): ReactElement => {
                 subtitle: "z-[1] -mb-5",
                 title: "z-[1] max-w-[500px] text-5xl sm:max-w-[600px] sm:text-6xl md:max-w-[700px] md:text-7xl lg:max-w-[800px] lg:text-8xl",
               }}
-              description="Delivering elegant and professional beauty touches for your special moments. Trust us to bring out your best look."
-              subtitle="BEAUTIFY"
+              description="Memberikan sentuhan kecantikan elegan dan profesional untuk momen spesial Anda. Percayakan pada kami untuk menampilkan penampilan terbaik Anda."
+              subtitle="MEMPERCANTIK"
               title="Professional Makeup Artist"
             />
           </div>
@@ -241,11 +241,18 @@ export const Home: FC<I> = (props): ReactElement => {
                     }
                   })}
 
-                  <SubmitButton className="mt-2 hidden w-64 lg:flex" color="rose" disabled={loading} label="BOOKING NOW" size="sm" variant="solid" />
+                  <SubmitButton
+                    className="mt-2 hidden w-64 lg:flex"
+                    color="rose"
+                    disabled={loading}
+                    label="PESAN SEKARANG"
+                    size="sm"
+                    variant="solid"
+                  />
                 </div>
 
                 {/* Components For Responsive Purposes Only */}
-                <SubmitButton className="mt-2 w-full lg:hidden" color="rose" disabled={loading} label="BOOKING NOW" size="sm" variant="solid" />
+                <SubmitButton className="mt-2 w-full lg:hidden" color="rose" disabled={loading} label="PESAN SEKARANG" size="sm" variant="solid" />
               </form>
 
               <address className="hidden items-center gap-2 xl:flex">
@@ -258,7 +265,7 @@ export const Home: FC<I> = (props): ReactElement => {
                   <IoLogoWhatsapp size={40} />
                 </Link>
                 <div>
-                  <span className="-mb-1 block text-lg">Need Help? Contact us</span>
+                  <span className="-mb-1 block text-lg">Butuh Bantuan? Hubungi Kami</span>
                   <Link
                     className="inline-block text-2xl font-semibold not-italic text-rose-500 active:scale-95 active:text-rose-400"
                     href={"https://wa.me/6285762346703"}

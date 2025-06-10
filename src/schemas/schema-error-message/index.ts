@@ -1,16 +1,16 @@
 /* eslint-disable perfectionist/sort-objects */
 export const schemaErrorMessage = {
   string: {
-    min: (label: string, min: number) => `Please enter ${label} minimum ${min} characters`,
-    max: (label: string, max: number) => `${label} maximum ${max} characters`,
-    required: (label: string) => `Please enter ${label}`,
-    email: (label: string) => `${label} must be a valid email address`,
-    url: (label: string) => `${label} must be a valid url`,
-    enum: (label: string) => `Please select ${label}`,
+    min: (label: string, min: number) => `Harap masukkan ${label} minimal ${min} karakter`,
+    max: (label: string, max: number) => `${label} maksimal ${max} karakter`,
+    required: (label: string) => `Harap masukkan ${label}`,
+    email: (label: string) => `${label} harus berupa alamat email yang valid`,
+    url: (label: string) => `${label} harus berupa URL yang valid`,
+    enum: (label: string) => `Harap pilih ${label}`,
   },
   number: {
-    min: (label: string, min: number) => `${label} minimum ${min}`,
-    max: (label: string, max: number) => `${label} maximum ${max}`,
+    min: (label: string, min: number) => `${label} minimal ${min}`,
+    max: (label: string, max: number) => `${label} maksimal ${max}`,
   },
 };
 /* eslint-enable perfectionist/sort-objects */

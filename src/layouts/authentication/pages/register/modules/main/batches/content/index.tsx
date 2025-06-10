@@ -25,7 +25,7 @@ interface IFormField {
 const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 1,
-    label: "Name",
+    label: "Nama",
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -47,7 +47,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 4,
-    label: "Phone",
+    label: "Telepon",
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -64,7 +64,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 6,
     isPassword: true,
-    label: "Confirm Password",
+    label: "Konfirmasi Password",
     name: "confirmPassword",
     type: "password",
   },
@@ -101,14 +101,14 @@ export const Content: FC = (): ReactElement => {
           console.warn("Register Failed!");
         }
       } else {
-        setErrorMessage("Confirm Password Does Not Match Password");
+        setErrorMessage("Konfirmasi Password Tidak Sesuai");
       }
     });
   };
 
   return (
     <main className="bg-slate-100 dark:bg-slate-900">
-      <FormContainer className={{ innerContainer: "max-h-[556px] w-full max-w-[450px]" }} href={"/"} label={"Home"}>
+      <FormContainer className={{ innerContainer: "max-h-[556px] w-full max-w-[450px]" }} href={"/"} label={"Beranda"}>
         <form className="flex w-full flex-col gap-3 overflow-y-auto" onSubmit={handleSubmit(onSubmit)}>
           {FORM_FIELDS_DATA.map((dt) => (
             <Input
@@ -128,10 +128,10 @@ export const Content: FC = (): ReactElement => {
 
           <span className="text-center text-sm text-red-600">{errorMessage}</span>
 
-          <SubmitButton color="rose" disabled={loading} label="REGISTER" size="sm" variant="solid" />
+          <SubmitButton color="rose" disabled={loading} label="DAFTAR" size="sm" variant="solid" />
 
           <div className="flex justify-center gap-1">
-            <span className="text-xs">Already have an account?</span>
+            <span className="text-xs">Sudah punya akun?</span>
             <Link
               className={ExampleATWM({ className: "text-xs", color: "rose", disabled: loading, size: "sm", variant: "ghost" })}
               href={"/authentication/login"}
@@ -145,7 +145,7 @@ export const Content: FC = (): ReactElement => {
                 }
               }}
             >
-              Login!
+              Masuk!
             </Link>
           </div>
         </form>

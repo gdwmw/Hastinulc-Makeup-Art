@@ -45,9 +45,9 @@ export const About: FC = (): ReactElement => {
           <figcaption className="absolute left-1/2 top-1/2 z-[2] flex size-52 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white">
             <span className="font-montaguSlab text-7xl text-rose-500">15+</span>
             <span className="text-center font-montaguSlab">
-              Years of
+              Tahun
               <br />
-              Experience
+              Pengalaman
             </span>
           </figcaption>
 
@@ -56,18 +56,18 @@ export const About: FC = (): ReactElement => {
 
         <SectionHeader
           className={{ container: "max-w-[500px] border-b border-rose-200 pb-8", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="At Hastinulc Makeup Art, we believe every face tells a story, and we're here to make it shine. With over 15 years of experience, we specialize in enhancing natural beauty and creating unforgettable looks for every special moment. Trust us to bring out your confidence and elegance with our professional makeup services."
-          subtitle="WELCOME TO"
-          title="Best Professional Makeup Artist"
+          description="Di Hastinulc Makeup Art, kami percaya setiap wajah memiliki cerita, dan kami hadir untuk membuatnya bersinar. Dengan pengalaman lebih dari 15 tahun, kami mengkhususkan diri dalam mempercantik kecantikan alami dan menciptakan tampilan tak terlupakan untuk setiap momen spesial. Percayakan pada kami untuk menampilkan rasa percaya diri dan elegan Anda dengan layanan makeup profesional kami."
+          subtitle="SELAMAT DATANG DI"
+          title="Professional Makeup Artist"
         />
       </section>
 
       <section className="container mx-auto flex justify-between gap-10 px-5 max-lg:flex-col lg:gap-5">
         <SectionHeader
           className={{ container: "max-w-[700px] max-lg:text-right", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="Every moment deserves to be extraordinary, and we are here to make that happen. From weddings to special events, our expert touch ensures you'll look and feel your absolute best. Let us create memories that last a lifetime with flawless and personalized beauty services."
-          subtitle="SPECIALS"
-          title="We're Here to Make Your Day Memorable"
+          description="Setiap momen layak menjadi luar biasa, dan kami hadir untuk mewujudkannya. Dari pernikahan hingga acara spesial, sentuhan ahli kami memastikan Anda tampil dan merasa yang terbaik. Biarkan kami menciptakan kenangan abadi dengan layanan kecantikan yang sempurna dan personal."
+          subtitle="SPESIALIS KAMI"
+          title="Kami Hadir untuk Membuat Hari Anda Berkesan"
         />
 
         <div className="flex gap-5 max-lg:justify-center">
@@ -108,9 +108,9 @@ export const About: FC = (): ReactElement => {
 
         <SectionHeader
           className={{ container: "z-[1] max-w-[700px] text-center", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="Choosing the right makeup artist is key to making your special day unforgettable. We combine skill, passion, and attention to detail to ensure your beauty shines through every moment. Here's why we stand out."
-          subtitle="WHY US"
-          title="Why Choose Us?"
+          description="Memilih makeup artist yang tepat adalah kunci untuk membuat hari spesial Anda tak terlupakan. Kami menggabungkan keahlian, passion, dan perhatian pada detail untuk memastikan kecantikan Anda bersinar di setiap momen. Inilah yang membuat kami berbeda."
+          subtitle="KENAPA KAMI"
+          title="Mengapa Memilih Kami?"
         />
 
         <footer className="z-[1] flex w-full gap-3 font-montaguSlab max-md:flex-col md:gap-10">
@@ -118,15 +118,15 @@ export const About: FC = (): ReactElement => {
             <div className="mx-auto w-fit space-y-3">
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">We travel to you, no matter how far</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Kami datang ke lokasi Anda, di mana pun</span>
               </li>
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">We provide full services for you</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Layanan lengkap untuk kebutuhan Anda</span>
               </li>
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">We you pick out the perfect makeup</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Kami membantu memilih makeup yang sempurna</span>
               </li>
             </div>
           </ul>
@@ -135,15 +135,15 @@ export const About: FC = (): ReactElement => {
             <div className="mx-auto w-fit space-y-3">
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">We keep calm & fun on your special day</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Suasana tenang & menyenangkan di hari spesial Anda</span>
               </li>
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">We are a very professional team</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Tim profesional yang berpengalaman</span>
               </li>
               <li className="flex items-center gap-5">
                 <FaCheck className="min-w-fit text-rose-500" size={20} />
-                <span className="md:text-sm lg:text-xl xl:text-2xl">Quarantee for you who are not satisfied</span>
+                <span className="md:text-sm lg:text-xl xl:text-2xl">Garansi kepuasan untuk Anda</span>
               </li>
             </div>
           </ul>

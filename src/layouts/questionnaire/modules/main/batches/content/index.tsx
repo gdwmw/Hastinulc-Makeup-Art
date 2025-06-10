@@ -61,11 +61,11 @@ export const Content: FC<I> = (props): ReactElement => {
           innerContainer: "size-full max-h-[800px] max-w-[800px] flex-col gap-5",
         }}
         href={"/"}
-        label={"Home"}
+        label={"Beranda"}
       >
         <header>
-          <h1 className="text-center text-2xl font-bold text-rose-400">Questionnaire</h1>
-          <p className="text-center max-[500px]:text-sm">Your feedback drives our continuous improvement</p>
+          <h1 className="text-center text-2xl font-bold text-rose-400">Kuesioner</h1>
+          <p className="text-center max-[500px]:text-sm">Masukan Anda membantu kami terus meningkatkan kualitas layanan</p>
         </header>
 
         <form className="flex flex-col gap-5 overflow-y-auto" onSubmit={handleSubmit(onSubmit)}>
@@ -121,7 +121,7 @@ export const Content: FC<I> = (props): ReactElement => {
             </div>
           ))}
 
-          <SubmitButton color="rose" disabled={loading} label="SUBMIT" size="sm" variant="solid" />
+          <SubmitButton color="rose" disabled={loading} label="KIRIM" size="sm" variant="solid" />
         </form>
       </FormContainer>
     </main>

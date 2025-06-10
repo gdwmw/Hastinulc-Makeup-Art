@@ -11,16 +11,16 @@ export const Contact: FC = (): ReactElement => (
       <div className="space-y-5">
         <SectionHeader
           className={{ container: "max-w-[600px]", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="Feel free to reach out to us for any inquiries or bookings. We're here to provide you with exceptional service and ensure your special moments are unforgettable. Let's get in touch and create something beautiful together."
-          subtitle="CONTACT US"
-          title="Get In Touch"
+          description="Jangan ragu untuk menghubungi kami untuk pertanyaan atau pemesanan. Kami siap memberikan pelayanan terbaik dan memastikan momen spesial Anda tak terlupakan. Mari berhubungan dan ciptakan sesuatu yang indah bersama."
+          subtitle="KONTAK"
+          title="Hubungi Kami"
         />
 
         <address className="space-y-5 text-nowrap">
           <ContactButton
             className={{ label: "max-[480px]:text-xl max-[420px]:text-lg max-[380px]:text-base max-[350px]:text-sm" }}
             icon={<FaLocationDot className="-mr-px" size={25} />}
-            label="Padang, Padang City, West Sumatra"
+            label="Padang, Kota Padang, Sumatera Barat"
             url="https://maps.app.goo.gl/ZzjRDTfPCRsXefUi7"
           />
 

@@ -82,14 +82,14 @@ export const Content: FC<I> = (props): ReactElement => {
           innerContainer: "size-full max-h-[821px] max-w-[600px] gap-5 lg:max-w-[1100px]",
         }}
         href={`/history/${props.session?.user?.username}/${props.slug[1]}`}
-        label={"Back"}
+        label={"Kembali"}
         onClick={() => setOpen({ historyAsideSwitch: false, historyDetailSwitch: false })}
       >
         <form className="flex w-full items-start overflow-y-auto lg:max-w-[600px]" onSubmit={handleSubmit(onSubmit)}>
           <div className="my-auto flex w-full flex-col items-center justify-center gap-4">
             <header className="pb-1">
-              <h1 className="text-center text-2xl font-bold text-rose-400">Rate Our Services</h1>
-              <p className="text-center max-[500px]:text-sm">Your feedback drives our continuous improvement</p>
+              <h1 className="text-center text-2xl font-bold text-rose-400">Beri Nilai Layanan Kami</h1>
+              <p className="text-center max-[500px]:text-sm">Masukan Anda membantu kami terus meningkatkan kualitas layanan</p>
             </header>
 
             <div className="flex items-center gap-1">
@@ -117,7 +117,7 @@ export const Content: FC<I> = (props): ReactElement => {
               color="rose"
               disabled={loading}
               errorMessage={errors.image?.message}
-              label="Image(s)"
+              label="Gambar"
               multiple
               type="file"
               {...register("image")}
@@ -128,7 +128,7 @@ export const Content: FC<I> = (props): ReactElement => {
               color="rose"
               disabled={loading}
               errorMessage={errors.description?.message}
-              label="Description"
+              label="Deskripsi"
               maxLength={1000}
               {...register("description")}
             />
@@ -156,7 +156,7 @@ export const Content: FC<I> = (props): ReactElement => {
               color="rose"
               disabled={loading || watch("rating") === 0}
               isReview={watch("rating") === 0}
-              label="SUBMIT"
+              label="KIRIM"
               size="sm"
               variant="solid"
             />

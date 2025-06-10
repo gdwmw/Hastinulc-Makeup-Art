@@ -29,9 +29,9 @@ export const Packages: FC = (): ReactElement => {
       <section className="container mx-auto flex flex-col items-center gap-10 px-5">
         <SectionHeader
           className={{ container: "max-w-[1000px] text-center", title: "text-4xl sm:text-5xl md:text-6xl" }}
-          description="With Hastinulc Makeup Art, You'll not get only your Dream Makeup services but also at affordable price."
-          subtitle="PACKAGES"
-          title="Choose Your Makeup Package"
+          description="Dengan Hastinulc Makeup Art, Anda tidak hanya mendapatkan layanan makeup impian tetapi juga dengan harga terjangkau."
+          subtitle="PAKET"
+          title="Pilih Paket Makeup Anda"
         />
 
         <div className="flex w-fit flex-wrap justify-center gap-5">
@@ -61,7 +61,7 @@ export const Packages: FC = (): ReactElement => {
                 href={"/booking"}
                 onClick={() => setBooking({ package: dt.title })}
               >
-                <FaChevronRight size={14} /> BOOKING NOW
+                <FaChevronRight size={14} /> PESAN SEKARANG
               </Link>
             </div>
           ))}
@@ -73,8 +73,8 @@ export const Packages: FC = (): ReactElement => {
           <SectionHeader
             className={{ container: "text-center sm:text-right", title: "text-4xl sm:text-nowrap sm:text-5xl md:text-6xl" }}
             description=""
-            subtitle="TESTIMONIALS"
-            title="Words From Clients"
+            subtitle="TESTIMONI"
+            title="Kata-Kata dari Klien"
           />
 
           <blockquote className="flex flex-col gap-5 rounded-lg bg-black p-5 text-white">
@@ -100,8 +100,8 @@ export const Packages: FC = (): ReactElement => {
             </div>
 
             <p className="text-lg">
-              I am beyond impressed with the makeup artistry! The attention to detail and professionalism exceeded all my expectations. The look was
-              flawless and lasted all day. Highly recommended!
+              Saya sangat terkesan dengan seni makeupnya! Perhatian terhadap detail dan profesionalisme melebihi semua harapan saya. Tampilannya
+              sempurna dan tahan sepanjang hari. Sangat direkomendasikan!
             </p>
           </blockquote>
         </div>

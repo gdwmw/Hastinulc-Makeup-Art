@@ -122,7 +122,7 @@ export const Content: FC<I> = (props): ReactElement => {
         }}
         href="/"
         isHistory
-        label="Home"
+        label="Beranda"
       >
         <div
           className={`size-full max-w-[400px] space-y-4 overflow-y-auto rounded-lg bg-rose-50 p-5 max-lg:mx-auto lg:block ${open?.historyAsideSwitch ? "hidden" : "block"}`}
@@ -220,7 +220,7 @@ const Component: FC<IComponent> = (props): ReactElement => (
               <FaBox className="text-rose-500" size={12} />
             </div>
             <figcaption>
-              <h2 className="text-gray-600">Package</h2>
+              <h2 className="text-gray-600">Paket</h2>
               <span className="font-semibold">{props.data.package || "-"}</span>
             </figcaption>
           </figure>
@@ -256,7 +256,7 @@ const Component: FC<IComponent> = (props): ReactElement => (
             <BsCalendar2CheckFill className="text-rose-500" size={13} />
           </div>
           <figcaption>
-            <h2 className="text-gray-600">Date</h2>
+            <h2 className="text-gray-600">Tanggal</h2>
             <span className="font-semibold">{props.data.date || "-"}</span>
           </figcaption>
         </figure>
@@ -310,7 +310,7 @@ const Component: FC<IComponent> = (props): ReactElement => (
         size="sm"
         variant="ghost"
       >
-        View Details <FaChevronRight className="ml-1" size={12} />
+        Lihat Detail <FaChevronRight className="ml-1" size={12} />
       </ExampleA>
     </footer>
   </section>

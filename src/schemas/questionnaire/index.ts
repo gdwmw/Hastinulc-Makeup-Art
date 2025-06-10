@@ -7,7 +7,7 @@ import { schemaErrorMessage } from "../schema-error-message";
 const questionsSchema: Record<string, z.ZodTypeAny> = {};
 
 const createQuestionValidator = (questionNumber: number) => {
-  const message = schemaErrorMessage.string.enum(`the answer for question number ${questionNumber}`);
+  const message = schemaErrorMessage.string.enum(`jawaban untuk pertanyaan nomor ${questionNumber}`);
   return z
     .string()
     .min(1, { message })

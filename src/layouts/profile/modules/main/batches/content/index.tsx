@@ -31,7 +31,7 @@ interface IFormField {
 const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 1,
-    label: "Name",
+    label: "Nama",
     maxLength: 50,
     name: "name",
     onKeyDown: (e) => inputValidations.name(e),
@@ -53,7 +53,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 4,
-    label: "Phone",
+    label: "Telepon",
     maxLength: 15,
     name: "phoneNumber",
     onKeyDown: (e) => inputValidations.phoneNumber(e),
@@ -61,7 +61,7 @@ const FORM_FIELDS_DATA: IFormField[] = [
   },
   {
     id: 5,
-    label: "Image",
+    label: "Gambar",
     name: "image",
     type: "file",
   },
@@ -162,7 +162,7 @@ export const Content: FC<I> = (props): ReactElement => {
 
   return (
     <main className="bg-slate-100 dark:bg-slate-900">
-      <FormContainer className={{ innerContainer: "max-h-[624px] w-full max-w-[450px]" }} href={"/"} label={"Home"}>
+      <FormContainer className={{ innerContainer: "max-h-[624px] w-full max-w-[450px]" }} href={"/"} label={"Beranda"}>
         <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
           <Avatar className="mx-auto min-h-32 min-w-32" iconSize={64} src={previewImage ?? props.session?.user?.image ?? ""} />
 
@@ -181,7 +181,7 @@ export const Content: FC<I> = (props): ReactElement => {
           ))}
 
           <div className="flex justify-center gap-1 max-[350px]:flex-col max-[350px]:items-center">
-            <span className="text-xs">Do you want to change your password?</span>
+            <span className="text-xs">Ingin mengubah password Anda?</span>
             <Link
               className={ExampleATWM({ className: "text-xs", color: "rose", disabled: loading, size: "sm", variant: "ghost" })}
               href={"/password/change"}
@@ -191,11 +191,11 @@ export const Content: FC<I> = (props): ReactElement => {
                 }
               }}
             >
-              Click Here!
+              Klik Di Sini!
             </Link>
           </div>
 
-          <SubmitButton color="rose" disabled={loading} label="UPDATE" size="sm" variant="solid" />
+          <SubmitButton color="rose" disabled={loading} label="PERBARUI" size="sm" variant="solid" />
         </form>
       </FormContainer>
     </main>

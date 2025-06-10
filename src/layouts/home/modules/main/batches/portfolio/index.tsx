@@ -11,9 +11,9 @@ export const Portfolio: FC = (): ReactElement => (
     <div className="container mx-auto flex flex-col items-center gap-10 px-5">
       <SectionHeader
         className={{ container: "max-w-[1000px] text-center", title: "text-4xl sm:text-5xl md:text-6xl" }}
-        description="Our portfolio highlights the artistry and precision that define our work. From bold, dramatic looks to soft, natural elegance, each image reflects our dedication to perfection. With over 15 years of expertise, we have transformed countless faces into timeless masterpieces for every special occasion. Explore our work and let us inspire your next unforgettable look."
-        subtitle="PORTFOLIO"
-        title="Showcasing Our Masterpieces"
+        description="Portofolio kami menyoroti seni dan ketelitian yang menjadi ciri khas karya kami. Dari tampilan tegas dan dramatis hingga elegan alami yang lembut, setiap gambar mencerminkan dedikasi kami terhadap kesempurnaan. Dengan pengalaman lebih dari 15 tahun, kami telah mengubah wajah-wajah menjadi mahakarya abadi untuk setiap acara spesial. Jelajahi karya kami dan biarkan kami menginspirasi penampilan tak terlupakan Anda berikutnya."
+        subtitle="PORTOFOLIO"
+        title="Memamerkan Mahakarya Kami"
       />
 
       <Image alt="Portfolio Image" className="rounded-lg" loading="lazy" src={portfolioImage} width={1000} />
@@ -24,7 +24,7 @@ export const Portfolio: FC = (): ReactElement => (
         prefetch={false}
         target="_blank"
       >
-        <FaChevronRight size={14} /> VIEW MORE
+        <FaChevronRight size={14} /> LIHAT LEBIH BANYAK
       </Link>
     </div>
   </section>

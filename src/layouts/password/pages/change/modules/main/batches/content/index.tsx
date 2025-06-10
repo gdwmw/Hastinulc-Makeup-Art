@@ -22,20 +22,20 @@ interface IFormField {
 const FORM_FIELDS_DATA: IFormField[] = [
   {
     id: 1,
-    label: "Current Password",
+    label: "Password Saat Ini",
     name: "currentPassword",
     type: "password",
   },
   {
     id: 2,
-    label: "New Password",
+    label: "Password Baru",
     maxLength: 72,
     name: "password",
     type: "password",
   },
   {
     id: 3,
-    label: "Confirm Password",
+    label: "Konfirmasi Password",
     name: "passwordConfirmation",
     type: "password",
   },
@@ -71,14 +71,14 @@ export const Content: FC = (): ReactElement => {
           console.warn("Change Password Failed!");
         }
       } else {
-        setErrorMessage("Confirm Password Does Not Match New Password");
+        setErrorMessage("Konfirmasi Password Tidak Sesuai");
       }
     });
   };
 
   return (
     <main className="bg-slate-100 dark:bg-slate-900">
-      <FormContainer className={{ innerContainer: "w-full max-w-[350px]" }} href={"/profile"} label={"Back"}>
+      <FormContainer className={{ innerContainer: "w-full max-w-[350px]" }} href={"/profile"} label={"Kembali"}>
         <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
           {FORM_FIELDS_DATA.map((dt) => (
             <Input
@@ -97,7 +97,7 @@ export const Content: FC = (): ReactElement => {
 
           <span className="text-center text-sm text-red-600">{errorMessage}</span>
 
-          <SubmitButton color="rose" disabled={loading} label="UPDATE" size="sm" variant="solid" />
+          <SubmitButton color="rose" disabled={loading} label="PERBARUI" size="sm" variant="solid" />
         </form>
       </FormContainer>
     </main>

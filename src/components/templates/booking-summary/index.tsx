@@ -16,7 +16,7 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
     <div className="space-y-4">
       <header>
         <h1 className="mb-4 text-center text-xl font-bold tracking-widest text-rose-400 max-[450px]:text-base max-[380px]:text-sm">
-          -- BOOKING SUMMARY --
+          -- RINGKASAN PEMESANAN --
         </h1>
         <div className="my-3 border-t border-gray-300" />
       </header>
@@ -24,22 +24,22 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
       <dl className="space-y-4 max-[450px]:text-sm max-[380px]:text-xs">
         <div className="space-y-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
           <div className="flex justify-between gap-5">
-            <dt className="font-medium text-gray-600">Name:</dt>
+            <dt className="font-medium text-gray-600">Nama:</dt>
             <dd className="line-clamp-1 font-semibold">{props.data.name || "-"}</dd>
           </div>
 
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Package:</dt>
+            <dt className="font-medium text-gray-600">Paket:</dt>
             <dd className="font-semibold">{props.data.package || "-"}</dd>
           </div>
 
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Date:</dt>
+            <dt className="font-medium text-gray-600">Tanggal:</dt>
             <dd className="font-semibold">{props.data.date || "-"}</dd>
           </div>
 
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Time:</dt>
+            <dt className="font-medium text-gray-600">Waktu:</dt>
             <dd className="max-w-60 text-right">
               <pre>{Array.isArray(props.data.time) && props.data.time.length > 0 ? props.data.time.join(`\n`) : "-"}</pre>
             </dd>
@@ -48,7 +48,7 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
 
         <div className="space-y-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Phone:</dt>
+            <dt className="font-medium text-gray-600">Telepon:</dt>
             <dd className="font-semibold">{props.data.phoneNumber || "-"}</dd>
           </div>
 
@@ -60,7 +60,7 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
           </div>
 
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Location:</dt>
+            <dt className="font-medium text-gray-600">Lokasi:</dt>
             <dd>
               <Link
                 className={ExampleATWM({
@@ -72,7 +72,7 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
                 href={props.data.googleMapsLink || "#"}
                 target="_blank"
               >
-                {props.data.googleMapsLink ? "View on Map" : "-"}
+                {props.data.googleMapsLink ? "Lihat di Peta" : "-"}
               </Link>
             </dd>
           </div>
@@ -102,14 +102,14 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
 
         {props.data.createdAt && (
           <div className="flex justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
-            <dt className="font-medium text-gray-600">Created At:</dt>
+            <dt className="font-medium text-gray-600">Dibuat Pada:</dt>
             <dd className="font-semibold">{format(new Date(props.data.createdAt), "yyyy-MM-dd / HH:mm") || "-"}</dd>
           </div>
         )}
 
         <div className="space-y-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-600">Tax (PPN):</dt>
+            <dt className="font-medium text-gray-600">Pajak (PPN):</dt>
             <dd className="font-semibold">{currencyFormat(props.data.tax || 0, "IDR")}</dd>
           </div>
 
@@ -129,8 +129,8 @@ export const BookingSummary: FC<I> = (props): ReactElement => (
     </div>
 
     <footer className="mt-4 text-center text-xs text-gray-400">
-      <span className="block">{props.data.documentId?.toLocaleUpperCase() || "< EMPTY >"}</span>
-      <span className="block">{props.data.relation_data?.documentId.toLocaleUpperCase() || "< EMPTY >"}</span>
+      <span className="block">{props.data.documentId?.toLocaleUpperCase() || "< KOSONG >"}</span>
+      <span className="block">{props.data.relation_data?.documentId.toLocaleUpperCase() || "< KOSONG >"}</span>
     </footer>
   </section>
 );

@@ -119,7 +119,7 @@ export const Content: FC<I> = (props): ReactElement => {
                   onClick={() => setOpen({ homeAside: false })}
                 >
                   <FaUser size={16} />
-                  Profile
+                  Profil
                 </Link>
               </li>
 
@@ -130,7 +130,7 @@ export const Content: FC<I> = (props): ReactElement => {
                   onClick={() => setOpen({ historyAsideSwitch: false, historyDetailSwitch: false, homeAside: false })}
                 >
                   <FaHistory size={16} />
-                  History
+                  Riwayat
                 </Link>
               </li>
 
@@ -150,7 +150,7 @@ export const Content: FC<I> = (props): ReactElement => {
                 >
                   <div className="flex items-center gap-2">
                     <FaClipboardList size={16} />
-                    <span>Questionnaire</span>
+                    <span>Kuesioner</span>
                   </div>
                   {questionnaireConditions && (
                     <div className="relative mt-[2px] flex size-2">
@@ -184,7 +184,7 @@ export const Content: FC<I> = (props): ReactElement => {
                   }}
                 >
                   <FaSignOutAlt size={16} />
-                  Logout
+                  Keluar
                 </button>
               </li>
             </>
@@ -195,7 +195,7 @@ export const Content: FC<I> = (props): ReactElement => {
                 href={"/authentication/login"}
                 onClick={() => setOpen({ homeAside: false })}
               >
-                LOGIN
+                MASUK
               </Link>
             </li>
           )}
