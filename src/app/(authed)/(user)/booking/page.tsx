@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Booking",
+  title: "Pemesanan",
 };
 
 const BookingPage: FC = (): ReactElement => <BookingLayout />;

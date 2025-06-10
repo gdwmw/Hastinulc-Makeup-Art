@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Questionnaire",
+  title: "Kuesioner",
 };
 
 const QuestionnairePage: FC = (): ReactElement => <QuestionnaireLayout />;

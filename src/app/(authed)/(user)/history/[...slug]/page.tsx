@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "History",
+  title: "Riwayat",
 };
 
 interface I {

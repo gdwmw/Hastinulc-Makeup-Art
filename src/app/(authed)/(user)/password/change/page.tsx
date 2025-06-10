@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Change Password",
+  title: "Ubah Password",
 };
 
 const ChangePasswordPage: FC = (): ReactElement => <ChangePasswordLayout />;

@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Profile",
+  title: "Profil",
 };
 
 const ProfilePage: FC = (): ReactElement => <ProfileLayout />;

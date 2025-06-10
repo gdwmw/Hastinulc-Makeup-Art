@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   publisher: "Hastinulc Makeup Art",
   referrer: "strict-origin-when-cross-origin",
   title: {
-    default: "Hastinulc | Home",
+    default: "Hastinulc | Beranda",
     template: "Hastinulc | %s",
   },
 };

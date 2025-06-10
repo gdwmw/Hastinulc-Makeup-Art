@@ -9,28 +9,28 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  description: "Hastinulc Makeup Art - Professional Makeup Services in Padang - Get the perfect look for your special day at an affordable price",
+  description: "Hastinulc Makeup Art - Layanan Makeup Profesional di Padang - Dapatkan tampilan sempurna untuk hari spesial Anda dengan harga terjangkau",
   keywords: [
     "Hastinulc Makeup Art",
     "Hastinulc Makeup",
     "Hastinulc",
-    "Professional Makeup Services in Padang",
-    "Professional Makeup Services",
-    "Professional Makeup",
+    "Layanan Makeup Profesional di Padang",
+    "Layanan Makeup Profesional",
+    "Makeup Profesional",
   ],
   openGraph: {
-    description: "Hastinulc Makeup Art - Professional Makeup Services in Padang - Get the perfect look for your special day at an affordable price",
+    description: "Hastinulc Makeup Art - Layanan Makeup Profesional di Padang - Dapatkan tampilan sempurna untuk hari spesial Anda dengan harga terjangkau",
     images: [
       {
         alt: "Hastinulc Makeup Art",
         height: 800,
-        url: "https://hastinulc-makeup-art.vercel.app/assets/images/logos/Hastinulc.png", // Must be an absolute URL and PNG format
+        url: "https://hastinulc-makeup-art.vercel.app/assets/images/logos/Hastinulc.png",
         width: 800,
       },
     ],
-    locale: "en_US",
+    locale: "id_ID",
     siteName: "Hastinulc Makeup Art",
-    title: "Hastinulc | Home",
+    title: "Hastinulc | Beranda",
     type: "website",
     url: "https://hastinulc-makeup-art.vercel.app/",
   },
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@hastinulchotimah",
-    description: "Hastinulc Makeup Art - Professional Makeup Services in Padang - Get the perfect look for your special day at an affordable price",
-    images: ["https://hastinulc-makeup-art.vercel.app/assets/images/logos/Hastinulc.png"], // Must be an absolute URL and PNG format
-    title: "Hastinulc | Home",
+    description: "Hastinulc Makeup Art - Layanan Makeup Profesional di Padang - Dapatkan tampilan sempurna untuk hari spesial Anda dengan harga terjangkau",
+    images: ["https://hastinulc-makeup-art.vercel.app/assets/images/logos/Hastinulc.png"],
+    title: "Hastinulc | Beranda",
   },
 };
 
