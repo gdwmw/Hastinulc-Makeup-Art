@@ -129,17 +129,6 @@ export const NAVIGATION_DATA = [
 
 // ----------------------------
 
-export const TIME_SLOTS_DATA = [
-  { id: 1, time: "06:00 - 09:00" },
-  { id: 2, time: "10:00 - 13:00" },
-  { id: 3, time: "14:00 - 17:00" },
-  { id: 4, time: "18:00 - 21:00" },
-  { id: 5, time: "22:00 - 01:00" },
-  { id: 6, time: "02:00 - 05:00" },
-];
-
-// ----------------------------
-
 export const PACKAGES_DATA = [
   {
     description: [
@@ -204,7 +193,8 @@ export const PACKAGES_DATA = [
     description: [
       { id: 1, text: "Softlens" },
       { id: 2, text: "Pemasangan Hijab" },
-      { id: 3, text: "Transportasi" },
+      { id: 3, text: "Maksimal 4 Orang" },
+      { id: 4, text: "Transportasi" },
     ],
     id: 6,
     price: "300000",
@@ -213,7 +203,8 @@ export const PACKAGES_DATA = [
   {
     description: [
       { id: 1, text: "Pemasangan Hijab" },
-      { id: 2, text: "Transportasi" },
+      { id: 2, text: "Maksimal 4 Orang" },
+      { id: 3, text: "Transportasi" },
     ],
     id: 7,
     price: "200000",

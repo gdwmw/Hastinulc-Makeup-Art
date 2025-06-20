@@ -19,19 +19,9 @@ export const BookingSchema = z.object({
   package: z.enum(PACKAGES_DATA.map((dt) => dt.title) as [string, ...string[]], {
     errorMap: () => ({ message: errorMessage.string.enum("Paket") }),
   }),
+  person: z.number().min(1, { message: errorMessage.number.min("Jumlah orang", 1) }),
   phoneNumber: z.string().min(10, { message: errorMessage.string.min("Nomor Telepon", 10) }),
-  time: z
-    .array(z.string())
-    .min(1, { message: errorMessage.string.enum("Waktu") })
-    .or(z.array(z.string()).length(0))
-    .superRefine((val, ctx) => {
-      if (val.length === 0) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: errorMessage.string.enum("Waktu"),
-        });
-      }
-    }),
+  time: z.string().min(1, { message: errorMessage.string.required("Waktu") }),
 });
 
 export type TBookingSchema = z.infer<typeof BookingSchema>;

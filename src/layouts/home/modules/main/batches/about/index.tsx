@@ -43,7 +43,7 @@ export const About: FC = (): ReactElement => {
           </div>
 
           <figcaption className="absolute left-1/2 top-1/2 z-[2] flex size-52 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white">
-            <span className="font-montaguSlab text-7xl text-rose-500">15+</span>
+            <span className="font-montaguSlab text-7xl text-rose-500">2+</span>
             <span className="text-center font-montaguSlab">
               Tahun
               <br />

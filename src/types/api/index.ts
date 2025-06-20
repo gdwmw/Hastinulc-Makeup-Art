@@ -164,12 +164,13 @@ export interface IDataResponse extends IDataCommon {
 
 interface IBookingCommon {
   username: string;
+  person: number;
   name: string;
   email: string;
   phoneNumber: string;
   package: string;
   date: string;
-  time: string[];
+  time: string;
   googleMapsLink: string;
   tax: string;
   subtotal: string;
