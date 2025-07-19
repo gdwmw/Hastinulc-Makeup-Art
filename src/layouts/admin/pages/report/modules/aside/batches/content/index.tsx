@@ -14,12 +14,12 @@ import { GETBooking } from "@/src/utils";
 
 const columns = [
   { key: "id", label: "ID" },
-  { key: "documentId", label: "Document Id" },
+  { key: "documentId", label: "ID Dokumen" },
   { key: "username", label: "Username" },
-  { key: "name", label: "Name" },
-  { key: "package", label: "Package" },
-  { key: "date", label: "Date" },
-  { key: "time", label: "Time" },
+  { key: "name", label: "Nama" },
+  { key: "package", label: "Paket" },
+  { key: "date", label: "Tanggal" },
+  { key: "time", label: "Waktu" },
   { key: "indicator", label: "Status" },
   { key: "total", label: "Total" },
 ];
@@ -101,36 +101,36 @@ export const Content: FC = (): ReactElement => {
     <aside className="grow space-y-5 overflow-y-auto">
       <section className="rounded-lg border px-2 pb-2 shadow-md">
         <div className="flex items-center gap-4 overflow-x-auto p-4">
-          <span className="-mb-1.5">From</span>
+          <span className="-mb-1.5">Dari</span>
 
           <DatePickerInput
             className={{ container: "min-w-[200px]" }}
             color="rose"
-            label="Date"
+            label="Tanggal"
             onChange={(value: Date | null) => setDateA(value)}
             selected={dateA}
           />
 
-          <span className="-mb-1.5">To</span>
+          <span className="-mb-1.5">Sampai</span>
 
           <DatePickerInput
             className={{ container: "min-w-[200px]" }}
             color="rose"
-            label="Date"
+            label="Tanggal"
             onChange={(value: Date | null) => setDateB(value)}
             selected={dateB}
           />
 
-          <Input className={{ container: "min-w-[338px] grow" }} color="rose" label="Search" {...register("search")} />
+          <Input className={{ container: "min-w-[300px] grow" }} color="rose" label="Cari" {...register("search")} />
 
-          <Select className={{ container: "min-w-[112px]" }} color="rose" defaultValue={"id"} label="By" {...register("by")}>
+          <Select className={{ container: "min-w-[112px]" }} color="rose" defaultValue={"id"} label="Berdasarkan" {...register("by")}>
             <option value="id">ID</option>
-            <option value="documentId">Document ID</option>
+            <option value="documentId">ID Dokumen</option>
             <option value="username">Username</option>
-            <option value="name">Name</option>
-            <option value="package">Package</option>
-            <option value="date">Date</option>
-            <option value="time">Time</option>
+            <option value="name">Nama</option>
+            <option value="package">Paket</option>
+            <option value="date">Tanggal</option>
+            <option value="time">Waktu</option>
             <option value="status">Status</option>
             <option value="total">Total</option>
           </Select>
@@ -138,7 +138,7 @@ export const Content: FC = (): ReactElement => {
       </section>
 
       <section className="space-y-4 rounded-lg border p-4 shadow-md">
-        <h3 className="text-lg font-semibold">Bookings Table</h3>
+        <h3 className="text-lg font-semibold">Tabel Booking</h3>
 
         <div className="flex flex-wrap gap-2">
           {columns.map((col) => (
@@ -269,13 +269,13 @@ export const Content: FC = (): ReactElement => {
               head: [tableColumn],
               startY: 28,
             });
-            doc.save("bookings-report.pdf");
+            doc.save("Rekapitulasi-Booking-Makeup.pdf");
           }}
           size="sm"
           variant="solid"
         >
           <FaFileExport />
-          <span>Export to PDF</span>
+          <span>Ekspor ke PDF</span>
         </ExampleA>
       </section>
     </aside>

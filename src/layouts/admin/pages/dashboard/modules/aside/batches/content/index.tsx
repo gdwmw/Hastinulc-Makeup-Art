@@ -31,13 +31,13 @@ const options = {
     },
     title: {
       display: true,
-      text: "Annual Booking Statistics",
+      text: "Statistik Booking Tahunan",
     },
   },
   responsive: true,
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const labels = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
 const getMonthlyBookingCounts = (bookings: IBookingResponse[] | undefined, year: number): number[] => {
   const counts = Array.from({ length: 12 }, () => 0);
@@ -75,13 +75,13 @@ export const Content: FC = (): ReactElement => {
         backgroundColor: "rgba(251, 113, 133, 0.5)",
         borderColor: "rgb(251, 113, 133)",
         data: thisYearData,
-        label: "This Year",
+        label: "Tahun Ini",
       },
       {
         backgroundColor: "rgba(229, 231, 235, 0.5)",
         borderColor: "rgb(229, 231, 235)",
         data: lastYearData,
-        label: "Last Year",
+        label: "Tahun Lalu",
       },
     ],
     labels,
@@ -122,7 +122,7 @@ export const Content: FC = (): ReactElement => {
 
       <div className="flex w-full gap-5">
         <section className="mb-2 flex h-96 basis-1/2 flex-col gap-2 rounded-lg border p-3 shadow-md">
-          <h3 className="text-lg font-semibold">Last Bookings</h3>
+          <h3 className="text-lg font-semibold">Booking Terbaru</h3>
 
           <div className="h-px w-full bg-gray-200" />
 
@@ -177,7 +177,7 @@ export const Content: FC = (): ReactElement => {
                           <FaBox className="text-rose-500" size={12} />
                         </div>
                         <figcaption>
-                          <h2 className="text-gray-600">Package</h2>
+                          <h2 className="text-gray-600">Paket</h2>
                           <span className="font-semibold">{dt.package || "-"}</span>
                         </figcaption>
                       </figure>
@@ -213,7 +213,7 @@ export const Content: FC = (): ReactElement => {
                           <BsCalendar2CheckFill className="text-rose-500" size={13} />
                         </div>
                         <figcaption>
-                          <h2 className="text-gray-600">Date</h2>
+                          <h2 className="text-gray-600">Tanggal</h2>
                           <span className="font-semibold">{dt.date || "-"}</span>
                         </figcaption>
                       </figure>
@@ -223,13 +223,13 @@ export const Content: FC = (): ReactElement => {
                           <FaLocationDot className="text-rose-500" size={14} />
                         </div>
                         <figcaption>
-                          <h2 className="text-gray-600">Location</h2>
+                          <h2 className="text-gray-600">Lokasi</h2>
                           <Link
                             className="font-semibold text-rose-400 underline hover:text-rose-500 max-[450px]:text-sm max-[380px]:text-xs"
                             href={dt.googleMapsLink}
                             target="_blank"
                           >
-                            View on Map
+                            Lihat di Peta
                           </Link>
                         </figcaption>
                       </figure>
@@ -240,7 +240,7 @@ export const Content: FC = (): ReactElement => {
                         <FaClock className="text-rose-500" size={13} />
                       </div>
                       <figcaption>
-                        <h2 className="text-gray-600">Time</h2>
+                        <h2 className="text-gray-600">Waktu</h2>
                         <span className="font-semibold">{dt.time.slice(0, 5) || "-"}</span>
                       </figcaption>
                     </figure>
@@ -261,7 +261,7 @@ export const Content: FC = (): ReactElement => {
                       size="sm"
                       variant="ghost"
                     >
-                      Cancel
+                      Batalkan
                     </ExampleA>
                   )}
 
@@ -275,7 +275,7 @@ export const Content: FC = (): ReactElement => {
                       size="sm"
                       variant="ghost"
                     >
-                      Reject
+                      Tolak
                     </ExampleA>
                   )}
 
@@ -289,7 +289,7 @@ export const Content: FC = (): ReactElement => {
                         size="sm"
                         variant="solid"
                       >
-                        Accept
+                        Terima
                       </ExampleA>
                     </>
                   )}
@@ -304,7 +304,7 @@ export const Content: FC = (): ReactElement => {
                         size="sm"
                         variant="solid"
                       >
-                        Confirm
+                        Konfirmasi
                       </ExampleA>
                     </>
                   )}
@@ -319,7 +319,7 @@ export const Content: FC = (): ReactElement => {
                         size="sm"
                         variant="solid"
                       >
-                        Final Pay
+                        Pelunasan
                       </ExampleA>
                     </>
                   )}
@@ -332,7 +332,7 @@ export const Content: FC = (): ReactElement => {
                       size="sm"
                       variant="solid"
                     >
-                      Confirm
+                      Konfirmasi
                     </ExampleA>
                   )}
                 </footer>
@@ -342,7 +342,7 @@ export const Content: FC = (): ReactElement => {
         </section>
 
         <section className="mb-2 flex h-96 basis-1/2 flex-col gap-2 rounded-lg border p-3 shadow-md">
-          <h3 className="text-lg font-semibold">Last Reviews</h3>
+          <h3 className="text-lg font-semibold">Ulasan Terbaru</h3>
 
           <div className="h-px w-full bg-gray-200" />
 
@@ -366,19 +366,19 @@ export const Content: FC = (): ReactElement => {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <dt className="font-medium text-gray-600">Description:</dt>
+                    <dt className="font-medium text-gray-600">Deskripsi:</dt>
                     <dd className="rounded-lg border border-gray-200 bg-gray-50 p-3">
                       <p className="leading-relaxed">{dt.description || "-"}</p>
                     </dd>
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <dt className="font-medium text-gray-600">Images:</dt>
+                    <dt className="font-medium text-gray-600">Gambar:</dt>
                     <dd className="grid grid-cols-2 gap-3 md:grid-cols-3">
                       {dt.image ? (
                         dt.image.map((dt, i) => (
                           <div className="relative aspect-square overflow-hidden rounded-lg border border-gray-200" key={i}>
-                            <Image alt="Review Image" className="object-cover" fill quality={50} src={API_URL + dt.url} />
+                            <Image alt="Gambar Ulasan" className="object-cover" fill quality={50} src={API_URL + dt.url} />
                           </div>
                         ))
                       ) : (

@@ -7,7 +7,7 @@ type T = Readonly<PropsWithChildren>;
 
 export const Content: FC<T> = (props): ReactElement => (
   <main className="bg-slate-100">
-    <FormContainer className={{ innerContainer: "size-full gap-5" }} href="/" label="Home">
+    <FormContainer className={{ innerContainer: "size-full gap-5" }} href="/" label="Beranda">
       <div
         // className={`size-full max-w-[400px] space-y-4 overflow-y-auto rounded-lg bg-rose-50 p-5 max-lg:mx-auto lg:block ${open?.historyAsideSwitch ? "hidden" : "block"}`}
         className={`size-full max-w-[400px] space-y-4 overflow-y-auto rounded-lg bg-rose-50 p-5 max-lg:mx-auto lg:block`}
@@ -16,7 +16,7 @@ export const Content: FC<T> = (props): ReactElement => (
           Dashboard
         </Link>
         <Link className={ExampleATWM({ color: "rose", size: "sm", variant: "solid" })} href={"/admin/report"}>
-          Report
+          Laporan
         </Link>
       </div>
       {props.children}
