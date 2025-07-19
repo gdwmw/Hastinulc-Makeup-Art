@@ -186,6 +186,7 @@ export interface IBookingPayload extends IBookingCommon {
 }
 
 export interface IBookingResponse extends IBookingCommon {
+  id?: number;
   documentId: string;
   relation_data: IDataResponse;
   relation_review?: IReviewResponse;
