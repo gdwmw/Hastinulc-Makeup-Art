@@ -97,6 +97,20 @@ export const Content: FC = (): ReactElement => {
     return passDate && passSearch;
   });
 
+  // Format tanggal untuk periode (dd/mm/yyyy)
+  const formatDateWithLeadingZero = (date: Date) => {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  // Format tanggal untuk tanda tangan (d MMMM yyyy)
+  const formatDateWithMonthName = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" };
+    return date.toLocaleDateString("id-ID", options);
+  };
+
   return (
     <aside className="grow space-y-5 overflow-y-auto">
       <section className="rounded-lg border px-2 pb-2 shadow-md">
@@ -221,11 +235,31 @@ export const Content: FC = (): ReactElement => {
         </div>
 
         <ExampleA
+          className="mt-4 flex items-center gap-2 px-4 py-2"
           color="rose"
           onClick={() => {
             const doc = new jsPDF();
-            doc.setFontSize(16);
-            doc.text("Rekapitulasi Booking Makeup", doc.internal.pageSize.getWidth() / 2, 20, { align: "center" });
+
+            doc.setFontSize(18);
+            doc.setTextColor(40, 40, 40);
+            doc.setFont("helvetica", "bold");
+            doc.text("REKAPITULASI BOOKING MAKEUP", doc.internal.pageSize.getWidth() / 2, 20, { align: "center" });
+
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "normal");
+
+            let periodeText = "Periode: ";
+            if (dateA && dateB) {
+              periodeText += `${formatDateWithLeadingZero(dateA)} s/d ${formatDateWithLeadingZero(dateB)}`;
+            } else if (dateA) {
+              periodeText += `Mulai ${formatDateWithLeadingZero(dateA)}`;
+            } else if (dateB) {
+              periodeText += `Sampai ${formatDateWithLeadingZero(dateB)}`;
+            } else {
+              periodeText += "Semua Data";
+            }
+            doc.text(periodeText, doc.internal.pageSize.getWidth() / 2, 30, { align: "center" });
+
             const tableColumn = columns.filter((col) => enabledCols[col.key]).map((col) => col.label);
             const tableRows = filteredData.map((dt) =>
               columns
@@ -240,42 +274,56 @@ export const Content: FC = (): ReactElement => {
                   if (col.key === "time") {
                     return dt.time?.slice(0, 5);
                   }
-                  switch (col.key) {
-                    case "date":
-                      return dt.date ?? "-";
-                    case "documentId":
-                      return dt.documentId ?? "-";
-                    case "id":
-                      return dt.id ?? "-";
-                    case "indicator":
-                      return dt.indicator ?? "-";
-                    case "name":
-                      return dt.name ?? "-";
-                    case "package":
-                      return dt.package ?? "-";
-                    case "time":
-                      return dt.time?.slice(0, 5) ?? "-";
-                    case "total":
-                      return currencyFormat(dt.total, "IDR");
-                    case "username":
-                      return dt.username ?? "-";
-                    default:
-                      return "-";
-                  }
+                  return dt[col.key as keyof IBookingResponse] ?? "-";
                 }),
             );
+
             autoTable(doc, {
+              alternateRowStyles: {
+                fillColor: [245, 245, 245],
+              },
+              // @ts-expect-error - jspdf-autotable
               body: tableRows,
+              bodyStyles: {
+                halign: "center",
+                lineColor: [0, 0, 0],
+                lineWidth: 0.1,
+                textColor: [40, 40, 40],
+              },
               head: [tableColumn],
-              startY: 28,
+              headStyles: {
+                fillColor: [251, 113, 133],
+                fontStyle: "bold",
+                halign: "center",
+                lineColor: [0, 0, 0],
+                lineWidth: 0.1,
+                textColor: [255, 255, 255],
+              },
+              margin: { top: 45 },
+              startY: 40,
+              styles: {
+                lineColor: [0, 0, 0],
+                lineWidth: 0.1,
+              },
             });
+
+            // @ts-expect-error - jspdf-autotable
+            const finalY = doc.lastAutoTable.finalY || 45 + 10;
+            const printDate = new Date();
+
+            doc.setFontSize(12);
+            doc.text(`Padang, ${formatDateWithMonthName(printDate)}`, doc.internal.pageSize.getWidth() - 70, finalY + 20);
+            doc.text("MUA (Makeup Artist)", doc.internal.pageSize.getWidth() - 70, finalY + 25);
+            doc.line(doc.internal.pageSize.getWidth() - 70, finalY + 45, doc.internal.pageSize.getWidth() - 20, finalY + 45);
+            doc.text("Hastinul Chotimah", doc.internal.pageSize.getWidth() - 70, finalY + 50);
+
             doc.save("Rekapitulasi-Booking-Makeup.pdf");
           }}
           size="sm"
           variant="solid"
         >
-          <FaFileExport />
-          <span>Ekspor ke PDF</span>
+          <FaFileExport className="text-lg" />
+          <span className="font-medium">Ekspor ke PDF</span>
         </ExampleA>
       </section>
     </aside>
